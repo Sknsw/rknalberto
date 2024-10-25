@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ingeniero y Desarrollador de Software</title>
+    <style>
+        /* Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body styling */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #333;
+            line-height: 1.6;
+            background: #f4f7fa;
+            overflow-x: hidden;
+        }
+
+        /* Header styling */
+        header {
+            background: linear-gradient(120deg, #4a00e0, #8e2de2);
+            color: #fff;
+            text-align: center;
+            padding: 100px 20px;
+            position: relative;
+            overflow: hidden;
+        }
+        header::before {
+            content: '';
+            position: absolute;
+            top: -50px;
+            left: -50px;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1), rgba(255,255,255,0));
+            transform: rotate(45deg);
+            animation: pulse 10s linear infinite;
+        }
+        header h1 {
+            font-size: 3.5rem;
+            animation: fadeInDown 1s ease-in-out;
+        }
+        header p {
+            font-size: 1.4rem;
+            margin-top: 10px;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+
+        /* Container */
+        .container {
+            width: 80%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 60px 0;
+        }
+
+        /* Section styling */
+        .section {
+            margin-bottom: 60px;
+            opacity: 0;
+            transform: translateY(50px);
+            animation: slideUp 1s ease forwards;
+        }
+        .section-title {
+            font-size: 2.5rem;
+            color: #4a00e0;
+            border-bottom: 4px solid #4a00e0;
+            display: inline-block;
+            margin-bottom: 30px;
+            padding-bottom: 5px;
+            position: relative;
+            overflow: hidden;
+        }
+        .section-title::before {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 100%;
+            background: #4a00e0;
+            left: 0;
+            bottom: 0;
+            transition: width 0.3s ease;
+            z-index: -1;
+        }
+        .section-title:hover::before {
+            width: 100%;
+        }
+        p, ul {
+            font-size: 1.2rem;
+            color: #444;
+            margin-bottom: 20px;
+        }
+        ul li {
+            margin-left: 20px;
+            color: #333;
+        }
+
+        /* Skills list */
+        .skills-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            animation: fadeIn 1.5s ease;
+        }
+        .skills-list li {
+            background: linear-gradient(120deg, #8e2de2, #4a00e0);
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 25px;
+            font-size: 1rem;
+            transition: transform 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        .skills-list li:hover {
+            transform: scale(1.1);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Footer */
+        footer {
+            background: #4a00e0;
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+            font-size: 1.2rem;
+            position: relative;
+            overflow: hidden;
+        }
+        footer::after {
+            content: '';
+            position: absolute;
+            width: 300%;
+            height: 300%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1), rgba(255,255,255,0));
+            top: -200%;
+            left: -200%;
+            transform: rotate(45deg);
+            animation: pulse 10s linear infinite reverse;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+        @keyframes fadeInDown {
+            0% { opacity: 0; transform: translateY(-20px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes slideUp {
+            0% { opacity: 0; transform: translateY(50px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes pulse {
+            0% { transform: scale(1); opacity: 0.8; }
+            50% { transform: scale(1.05); opacity: 0.9; }
+            100% { transform: scale(1); opacity: 0.8; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Ingeniero y Desarrollador de Software</h1>
+    <p>Transformación tecnológica efectiva y de alto impacto para empresas y startups</p>
+</header>
+
+<div class="container">
+    <section class="section">
+        <h2 class="section-title">Sobre Mí</h2>
+        <p>Con amplia experiencia en el diseño y desarrollo de portales web, aplicaciones, bots y software a medida, ayudo a empresas y startups a implementar soluciones tecnológicas efectivas. Mi enfoque está en la excelencia y el profesionalismo en cada etapa del desarrollo.</p>
+    </section>
+
+    <section class="section">
+        <h2 class="section-title">Habilidades</h2>
+        <ul>
+            <li>Inteligencia Artificial y Algoritmos</li>
+            <li>Gestión de Proyectos Complejos</li>
+            <li>Desarrollo de Aplicaciones a Medida</li>
+            <li>Transformación Tecnológica</li>
+            <li>Configuración de Entornos Virtuales y Contenedores (Docker, Kubernetes)</li>
+        </ul>
+    </section>
+
+    <section class="section">
+        <h2 class="section-title">Lenguajes y Tecnologías</h2>
+        <ul class="skills-list">
+            <li>Python</li>
+            <li>JavaScript</li>
+            <li>Java</li>
+            <li>C#</li>
+            <li>PHP</li>
+            <li>Ruby</li>
+            <li>Swift</li>
+            <li>TypeScript</li>
+            <li>SQL</li>
+            <li>Go</li>
+            <li>Kotlin</li>
+            <li>Rust</li>
+            <li>R</li>
+            <li>Shell Scripting</li>
+        </ul>
+    </section>
+
+    <section class="section">
+        <h2 class="section-title">Contacto</h2>
+        <p>Si buscas resultados de alto rendimiento y un trato personalizado, no dudes en <a href="mailto:tuemail@ejemplo.com" style="color: #8e2de2; text-decoration: underline;">contactarme</a>. Estaré encantado de ayudarte a convertir tus ideas en realidad.</p>
+    </section>
+</div>
+
+<footer>
+    <p>&copy; 2024 Ingeniero y Desarrollador de Software</p>
+</footer>
+
+<script>
+    // Animation on scroll
+    const sections = document.querySelectorAll('.section');
+    window.addEventListener('scroll', () => {
+        sections.forEach(section => {
+            const sectionTop = section.getBoundingClientRect().top;
+            if (sectionTop < window.innerHeight - 100) {
+                section.classList.add('visible');
+            }
+        });
+    });
+</script>
+
+</body>
+</html>
+
+
