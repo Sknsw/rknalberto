@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto - Ingeniero y Desarrollador de Software</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #3498db, #8e44ad); /* Gradiente de fondo */
+            background-attachment: fixed; /* Mantiene el fondo fijo al hacer scroll */
+            color: white; /* Color de texto general */
+        }
+        header {
+            text-align: center;
+            padding: 1em 0;
+            background:linear-gradient(120deg, #4a00e0, #8e2de2); /* Color similar al gradiente */
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+            color: #f1c40f;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        nav ul li {
+            display: inline;
+            margin: 0 1em;
+        }
+        nav ul li a {
+            color: #f1c40f; /* Color de los enlaces */
+            text-decoration: none;
+        }
+        nav ul li a:hover {
+            text-decoration: underline;
+        }
+        .contact {
+            text-align: center;
+            padding: 2em 1em;
+            background: rgba(255, 255, 255, 0.9); /* Fondo con opacidad */
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            max-width: 800px; /* Máximo ancho para la sección */
+            margin: 2em auto; /* Centrar la sección */
+        }
+        .contact h2 {
+            font-size: 2.5em;
+            margin-bottom: 0.5em;
+            color: #f1c40f;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+        .contact p {
+            font-size: 1.2em;
+            line-height: 1.6;
+            margin-bottom: 1.5em;
+        }
+        .contact-info {
+            font-size: 1.2em;
+            margin-bottom: 1.5em;
+        }
+        .form-group {
+            margin-bottom: 1em;
+            text-align: left; /* Alinear etiquetas a la izquierda */
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5em;
+            font-weight: bold;
+        }
+        .form-group input,
+        .form-group textarea {
+            width: 100%; /* Ancho completo */
+            padding: 0.5em;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background: rgba(255, 255, 255, 0.9); /* Fondo blanco con opacidad */
+            color: #333; /* Color del texto en el formulario */
+        }
+        .form-group input::placeholder,
+        .form-group textarea::placeholder {
+            color: #999; /* Color de texto del placeholder */
+        }
+        .btn-submit {
+            padding: 0.7em 1.5em;
+            background: #3498db;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        .btn-submit:hover {
+            background: #2980b9;
+        }
+        footer {
+            text-align: center;
+            padding: 1em 0;
+            background: rgba(0, 0, 0, 0.7);
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Contacto</h1>
+    <nav>
+        <ul>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="about.html">Sobre Mí</a></li>
+            <li><a href="services.html">Servicios</a></li>
+            <li><a href="portfolio.html">Portafolio</a></li>
+        </ul>
+    </nav>
+</header>
+
+<section class="contact">
+    <h2>Contáctame</h2>
+    <p>Para consultas o una propuesta personalizada, no dudes en escribirme. ¡Estaré encantado de ayudarte a llevar tus ideas al siguiente nivel!</p>
+
+    <div class="contact-info">
+        <p><strong>Teléfono:</strong> <a href="tel:+34641438406">+34 641 438 406</a></p>
+        <p><strong>Email:</strong> <a href="mailto:rodriguezgrxalbert@gmail.com">rodriguezgrxalbert@gmail.com</a></p>
+    </div>
+
+    <form class="contact-form" action="mailto:rodriguezgrxalbert@gmail.com" method="post" enctype="text/plain">
+        <div class="form-group">
+            <label for="name">Nombre</label>
+            <input type="text" id="name" name="name" required placeholder="Tu nombre completo">
+        </div>
+        <div class="form-group">
+            <label for="email">Correo Electrónico</label>
+            <input type="email" id="email" name="email" required placeholder="Tu correo electrónico">
+        </div>
+        <div class="form-group">
+            <label for="message">Mensaje</label>
+            <textarea id="message" name="message" rows="5" required placeholder="Escribe tu mensaje aquí..."></textarea>
+        </div>
+        <button type="submit" class="btn-submit">Enviar Mensaje</button>
+    </form>
+</section>
+
+<footer>
+    <p>&copy; 2024 Ingeniero y Desarrollador de Software</p>
+</footer>
+
+</body>
+</html>
