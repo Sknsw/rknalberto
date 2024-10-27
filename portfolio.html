@@ -14,6 +14,83 @@
             color: white;
             border-radius: 10px;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+        header h1 {
+            font-size: 1.8rem;
+            font-weight: bold;
+            margin-bottom: 8px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            animation: pulseText 1.5s infinite;
+        }
+        header p {
+            font-size: 1rem;
+            margin-bottom: 15px;
+        }
+        header #digital-clock {
+            font-size: 1.2rem;
+            font-family: 'Courier New', Courier, monospace;
+            color: #00ffcc;
+            text-shadow: 0 0 8px rgba(0, 255, 204, 0.7), 0 0 16px rgba(0, 255, 204, 0.5);
+            letter-spacing: 0.1em;
+            animation: pulse 1s infinite alternate;
+            margin-bottom: 8px;
+        }
+        @keyframes pulse {
+            0% {
+                text-shadow: 0 0 8px rgba(0, 255, 204, 0.7), 0 0 16px rgba(0, 255, 204, 0.5);
+            }
+            100% {
+                text-shadow: 0 0 12px rgba(0, 255, 204, 0.9), 0 0 24px rgba(0, 255, 204, 0.7);
+            }
+        }
+        @keyframes pulseText {
+            0% {
+                color: #ffffff;
+            }
+            50% {
+                color: #00ffcc;
+            }
+            100% {
+                color: #ffffff;
+            }
+        }
+        header nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        .portfolio h2 {
+            font-size: 2em;
+            margin-bottom: 0.5em;
+            color: #f1c40f;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            animation: glow 2s infinite alternate;
+        }
+        @keyframes glow {
+            from {
+                text-shadow: 0 0 10px #f1c40f, 0 0 20px #f1c40f, 0 0 30px #f1c40f, 0 0 40px #f1c40f;
+            }
+            to {
+                text-shadow: 0 0 20px #e67e22, 0 0 30px #e67e22, 0 0 40px #e67e22, 0 0 50px #e67e22;
+            }
+        }
+        .portfolio::before {
+            content: "";
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1), transparent 60%);
+            animation: rotate 10s linear infinite;
+        }
+        @keyframes rotate {
+            from {transform: rotate(0);}
+            to {transform: rotate(360deg);}
         }
         .portfolio h2 {
             font-size: 2.5em;
@@ -44,10 +121,14 @@
             width: 28%;
             transition: transform 0.3s, box-shadow 0.3s;
             text-align: center;
+            position: relative;
+            overflow: hidden;
         }
         .project:hover {
             transform: translateY(-5px);
             box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+            background: linear-gradient(135deg, #f39c12, #e74c3c);
+            color: #fff;
         }
         .project h3 {
             font-size: 1.5em;
@@ -73,24 +154,24 @@
         }
         /* Estilos para el modal */
         .modal {
-            display: none; /* Oculto por defecto */
-            position: fixed; /* Queda fijo en la pantalla */
-            z-index: 1; /* Se coloca en la parte superior */
+            display: none;
+            position: fixed;
+            z-index: 1;
             left: 0;
             top: 0;
-            width: 100%; /* Ancho completo */
-            height: 100%; /* Alto completo */
-            overflow: auto; /* Si el contenido es demasiado, se habilita el desplazamiento */
-            background-color: rgba(0, 0, 0, 0.5); /* Fondo semitransparente */
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.5);
         }
         .modal-content {
             background-color: #fefefe;
-            margin: 15% auto; /* Centramos el modal */
+            margin: 15% auto;
             padding: 20px;
             border: 1px solid #888;
-            width: 80%; /* Ancho del modal */
-            max-width: 600px; /* Ancho máximo */
-            border-radius: 8px; /* Esquinas redondeadas */
+            width: 80%;
+            max-width: 600px;
+            border-radius: 8px;
         }
         .close {
             color: #aaa;
@@ -103,6 +184,27 @@
             color: black;
             text-decoration: none;
             cursor: pointer;
+        }
+
+        /* Media Query para dispositivos más pequeños */
+        @media (max-width: 768px) {
+            .project {
+                width: 45%;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .project {
+                width: 90%;
+            }
+
+            .portfolio h2 {
+                font-size: 2em;
+            }
+
+            .portfolio p {
+                font-size: 1em;
+            }
         }
     </style>
 </head>
@@ -125,88 +227,67 @@
     <p>Aquí algunos de los proyectos en los que he trabajado, cada uno reflejando mi compromiso con la calidad y la innovación.</p>
 
     <div class="projects">
+        <!-- Proyectos con descripción ampliada -->
         <div class="project">
             <h3>App de Gestión de Tareas 📋</h3>
-            <p>Una innovadora aplicación web que permite a los usuarios organizar y gestionar sus tareas diarias de manera eficiente, aumentando su productividad.</p>
-            <a href="javascript:void(0)" onclick="openModal('App de Gestión de Tareas 📋', 'Una innovadora aplicación web que permite a los usuarios organizar y gestionar sus tareas diarias de manera eficiente, aumentando su productividad. Lenguajes Utilizados: HTML, CSS, JavaScript.')">Ver Proyecto</a>
+            <p>Organización eficiente y productividad aumentada. Lenguajes: HTML, CSS, JavaScript.</p>
+            <a href="javascript:void(0)" onclick="openModal('App de Gestión de Tareas 📋', 'Aplicación de organización de tareas diarias.')">Ver Proyecto</a>
         </div>
         <div class="project">
             <h3>Plataforma de E-commerce 🛒</h3>
-            <p>Desarrollo de una plataforma de e-commerce de última generación que facilita la venta en línea para pequeñas y medianas empresas, integrando múltiples métodos de pago y un diseño responsivo.</p>
-            <a href="javascript:void(0)" onclick="openModal('Plataforma de E-commerce 🛒', 'Desarrollo de una plataforma de e-commerce de última generación que facilita la venta en línea para pequeñas y medianas empresas, integrando múltiples métodos de pago y un diseño responsivo. Lenguajes Utilizados: HTML, CSS, JavaScript, PHP.')">Ver Proyecto</a>
+            <p>Venta en línea con diseño responsivo. Lenguajes: HTML, CSS, JavaScript, PHP.</p>
+            <a href="javascript:void(0)" onclick="openModal('Plataforma de E-commerce 🛒', 'Plataforma para facilitar ventas en línea.')">Ver Proyecto</a>
         </div>
         <div class="project">
             <h3>Sistema de Reservas 🍽️</h3>
-            <p>Un sistema avanzado que permite la gestión de reservas para restaurantes, incluyendo funcionalidades de confirmación automatizada y recordatorios por SMS y correo electrónico.</p>
-            <a href="javascript:void(0)" onclick="openModal('Sistema de Reservas 🍽️', 'Un sistema avanzado que permite la gestión de reservas para restaurantes, incluyendo funcionalidades de confirmación automatizada y recordatorios por SMS y correo electrónico. Lenguajes Utilizados: HTML, CSS, JavaScript.')">Ver Proyecto</a>
+            <p>Reservas para restaurantes con recordatorios. Lenguajes: HTML, CSS, JavaScript.</p>
+            <a href="javascript:void(0)" onclick="openModal('Sistema de Reservas 🍽️', 'Sistema avanzado para gestión de reservas en restaurantes.')">Ver Proyecto</a>
         </div>
         <div class="project">
-            <h3>Chatbot de Atención al Cliente 🤖</h3>
-            <p>Desarrollo de un chatbot inteligente que optimiza la atención al cliente, ofreciendo respuestas automáticas y asistencia 24/7, mejorando la satisfacción del usuario.</p>
-            <a href="javascript:void(0)" onclick="openModal('Chatbot de Atención al Cliente 🤖', 'Desarrollo de un chatbot inteligente que optimiza la atención al cliente, ofreciendo respuestas automáticas y asistencia 24/7, mejorando la satisfacción del usuario. Lenguajes Utilizados: Python, JavaScript.')">Ver Proyecto</a>
+            <h3>Red Social de Viajes 🌍</h3>
+            <p>Conecta viajeros y comparte experiencias. Lenguajes: HTML, CSS, JS, Node.js.</p>
+            <a href="javascript:void(0)" onclick="openModal('Red Social de Viajes 🌍', 'Una plataforma para conectar viajeros.')">Ver Proyecto</a>
         </div>
         <div class="project">
-            <h3>Portal de Noticias 📰</h3>
-            <p>Un portal interactivo que presenta las últimas noticias, diseñado con una interfaz amigable y actualizaciones en tiempo real, integrando fuentes de información diversas.</p>
-            <a href="javascript:void(0)" onclick="openModal('Portal de Noticias 📰', 'Un portal interactivo que presenta las últimas noticias, diseñado con una interfaz amigable y actualizaciones en tiempo real, integrando fuentes de información diversas. Lenguajes Utilizados: HTML, CSS, JavaScript.')">Ver Proyecto</a>
+            <h3>App de Recomendación de Películas 🎬</h3>
+            <p>Recomendaciones de películas personalizadas. Lenguajes: Python, Flask, HTML, CSS.</p>
+            <a href="javascript:void(0)" onclick="openModal('App de Recomendación de Películas 🎬', 'Aplicación para recomendar películas en base a preferencias.')">Ver Proyecto</a>
         </div>
         <div class="project">
-            <h3>Aplicación de Fitness 🏋️‍♂️</h3>
-            <p>Una aplicación que ayuda a los usuarios a planificar sus rutinas de ejercicios personalizadas y realizar un seguimiento detallado de su progreso físico.</p>
-            <a href="javascript:void(0)" onclick="openModal('Aplicación de Fitness 🏋️‍♂️', 'Una aplicación que ayuda a los usuarios a planificar sus rutinas de ejercicios personalizadas y realizar un seguimiento detallado de su progreso físico. Lenguajes Utilizados: HTML, CSS, JavaScript.')">Ver Proyecto</a>
+            <h3>Simulador de Bolsa 📈</h3>
+            <p>Simulador de inversiones para aprender a operar en bolsa. Lenguajes: Python, Django, SQL.</p>
+            <a href="javascript:void(0)" onclick="openModal('Simulador de Bolsa 📈', 'Simulador de inversiones con datos en tiempo real.')">Ver Proyecto</a>
         </div>
         <div class="project">
-            <h3>Red Social para Profesionales 🌐</h3>
-            <p>Una red social innovadora diseñada para conectar a profesionales, permitiendo la creación de perfiles detallados y la colaboración en proyectos.</p>
-            <a href="javascript:void(0)" onclick="openModal('Red Social para Profesionales 🌐', 'Una red social innovadora diseñada para conectar a profesionales, permitiendo la creación de perfiles detallados y la colaboración en proyectos. Lenguajes Utilizados: HTML, CSS, JavaScript.')">Ver Proyecto</a>
+            <h3>Sistema de Inventario 🔢</h3>
+            <p>Gestión de inventarios y reportes detallados. Lenguajes: PHP, MySQL, Bootstrap.</p>
+            <a href="javascript:void(0)" onclick="openModal('Sistema de Inventario 🔢', 'Sistema para gestionar inventarios y reportes en tiempo real.')">Ver Proyecto</a>
         </div>
         <div class="project">
-            <h3>Aplicación de Aprendizaje de Idiomas 🌍</h3>
-            <p>Una plataforma que ayuda a los usuarios a aprender nuevos idiomas a través de lecciones interactivas y ejercicios de práctica, adaptándose a su progreso.</p>
-            <a href="javascript:void(0)" onclick="openModal('Aplicación de Aprendizaje de Idiomas 🌍', 'Una plataforma que ayuda a los usuarios a aprender nuevos idiomas a través de lecciones interactivas y ejercicios de práctica, adaptándose a su progreso. Lenguajes Utilizados: HTML, CSS, JavaScript.')">Ver Proyecto</a>
-        </div>
-        <!-- Nuevos proyectos impresionantes -->
-        <div class="project">
-            <h3>Plataforma de Inteligencia Artificial 🤖</h3>
-            <p>Desarrollo de una plataforma que utiliza algoritmos de aprendizaje automático para predecir tendencias de mercado, ayudando a las empresas a tomar decisiones informadas.</p>
-            <a href="javascript:void(0)" onclick="openModal('Plataforma de Inteligencia Artificial 🤖', 'Desarrollo de una plataforma que utiliza algoritmos de aprendizaje automático para predecir tendencias de mercado, ayudando a las empresas a tomar decisiones informadas. Lenguajes Utilizados: Python, TensorFlow, JavaScript.')">Ver Proyecto</a>
+            <h3>Plataforma de Cursos Online 💻</h3>
+            <p>Creación y distribución de cursos online. Lenguajes: React, Firebase, Node.js.</p>
+            <a href="javascript:void(0)" onclick="openModal('Plataforma de Cursos Online 💻', 'Aplicación para cursos en línea con autenticación y gestión de contenido.')">Ver Proyecto</a>
         </div>
         <div class="project">
-            <h3>Simulador de Procesos Químicos ⚗️</h3>
-            <p>Un simulador que modela reacciones químicas complejas en tiempo real, proporcionando a los usuarios herramientas para realizar experimentos virtuales.</p>
-            <a href="javascript:void(0)" onclick="openModal('Simulador de Procesos Químicos ⚗️', 'Un simulador que modela reacciones químicas complejas en tiempo real, proporcionando a los usuarios herramientas para realizar experimentos virtuales. Lenguajes Utilizados: C++, OpenGL.')">Ver Proyecto</a>
-        </div>
-        <div class="project">
-            <h3>Juego de Estrategia Multijugador 🎮</h3>
-            <p>Desarrollo de un juego de estrategia en tiempo real que permite a los usuarios competir entre sí en un entorno interactivo y desafiante.</p>
-            <a href="javascript:void(0)" onclick="openModal('Juego de Estrategia Multijugador 🎮', 'Desarrollo de un juego de estrategia en tiempo real que permite a los usuarios competir entre sí en un entorno interactivo y desafiante. Lenguajes Utilizados: C#, Unity.')">Ver Proyecto</a>
-        </div>
-        <div class="project">
-            <h3>Sistema de Reconocimiento Facial 📸</h3>
-            <p>Implementación de un sistema de reconocimiento facial que permite la identificación de usuarios en tiempo real utilizando técnicas avanzadas de procesamiento de imágenes.</p>
-            <a href="javascript:void(0)" onclick="openModal('Sistema de Reconocimiento Facial 📸', 'Implementación de un sistema de reconocimiento facial que permite la identificación de usuarios en tiempo real utilizando técnicas avanzadas de procesamiento de imágenes. Lenguajes Utilizados: Python, OpenCV.')">Ver Proyecto</a>
-        </div>
-        <div class="project">
-            <h3>Aplicación de Realidad Aumentada 📱</h3>
-            <p>Desarrollo de una aplicación que integra tecnología de realidad aumentada para ofrecer experiencias interactivas en el mundo real.</p>
-            <a href="javascript:void(0)" onclick="openModal('Aplicación de Realidad Aumentada 📱', 'Desarrollo de una aplicación que integra tecnología de realidad aumentada para ofrecer experiencias interactivas en el mundo real. Lenguajes Utilizados: Swift, ARKit.')">Ver Proyecto</a>
-        </div>
-        <div class="project">
-            <h3>Blockchain para Gestión de Contratos 📜</h3>
-            <p>Un sistema basado en blockchain que permite la gestión segura de contratos inteligentes, aumentando la transparencia y la seguridad en las transacciones.</p>
-            <a href="javascript:void(0)" onclick="openModal('Blockchain para Gestión de Contratos 📜', 'Un sistema basado en blockchain que permite la gestión segura de contratos inteligentes, aumentando la transparencia y la seguridad en las transacciones. Lenguajes Utilizados: Solidity, JavaScript.')">Ver Proyecto</a>
+            <h3>Aplicación de Clima ☀️</h3>
+            <p>Consulta el clima en tiempo real de cualquier ciudad. Lenguajes: JavaScript, API OpenWeather.</p>
+            <a href="javascript:void(0)" onclick="openModal('Aplicación de Clima ☀️', 'Aplicación para verificar el clima en diferentes ubicaciones.')">Ver Proyecto</a>
         </div>
     </div>
 </section>
 
-<!-- Modal -->
+<!-- Modal para ver más detalles del proyecto -->
 <div id="myModal" class="modal">
     <div class="modal-content">
         <span class="close" onclick="closeModal()">&times;</span>
-        <h3 id="modalTitle"></h3>
+        <h2 id="modalTitle"></h2>
         <p id="modalDescription"></p>
     </div>
 </div>
+
+<footer>
+    <p>&copy; 2024 Mi Portafolio. Todos los derechos reservados.</p>
+</footer>
 
 <script>
     function openModal(title, description) {
@@ -214,22 +295,15 @@
         document.getElementById("modalDescription").innerText = description;
         document.getElementById("myModal").style.display = "block";
     }
-
     function closeModal() {
         document.getElementById("myModal").style.display = "none";
     }
-
-    // Cierra el modal si se hace clic fuera de él
     window.onclick = function(event) {
         if (event.target == document.getElementById("myModal")) {
             closeModal();
         }
     }
 </script>
-
-<footer>
-    <p>© 2024 Tu Nombre. Todos los derechos reservados.</p>
-</footer>
 
 </body>
 </html>

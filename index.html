@@ -6,7 +6,79 @@
     <title>Ingeniero y Desarrollador de Software</title>
     <link rel="stylesheet" href="styles.css">
     <style>
-        /* Estilos específicos para la sección .intro */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #333;
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+        header {
+            background: linear-gradient(120deg, #4a00e0, #8e2de2);
+            color: #fff;
+            text-align: center;
+            padding: 30px 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+        header h1 {
+            font-size: 1.8rem;
+            font-weight: bold;
+            margin-bottom: 8px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            animation: pulseText 1.5s infinite;
+        }
+        header p {
+            font-size: 1rem;
+            margin-bottom: 15px;
+        }
+        header #digital-clock {
+            font-size: 1.2rem;
+            font-family: 'Courier New', Courier, monospace;
+            color: #00ffcc;
+            text-shadow: 0 0 8px rgba(0, 255, 204, 0.7), 0 0 16px rgba(0, 255, 204, 0.5);
+            letter-spacing: 0.1em;
+            animation: pulse 1s infinite alternate;
+            margin-bottom: 8px;
+        }
+        @keyframes pulse {
+            0% {
+                text-shadow: 0 0 8px rgba(0, 255, 204, 0.7), 0 0 16px rgba(0, 255, 204, 0.5);
+            }
+            100% {
+                text-shadow: 0 0 12px rgba(0, 255, 204, 0.9), 0 0 24px rgba(0, 255, 204, 0.7);
+            }
+        }
+        @keyframes pulseText {
+            0% {
+                color: #ffffff;
+            }
+            50% {
+                color: #00ffcc;
+            }
+            100% {
+                color: #ffffff;
+            }
+        }
+        header nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        header nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 1rem;
+            padding: 5px 8px;
+        }
+        header nav ul li a:hover {
+            text-decoration: underline;
+        }
 
         .intro {
             text-align: center;
@@ -15,29 +87,37 @@
             color: white;
             border-radius: 10px;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            max-width: 90%;
+            margin: 0 auto;
         }
-
         .intro h2 {
             font-size: 2em;
             margin-bottom: 0.5em;
             color: #f1c40f;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            animation: glow 2s infinite alternate;
         }
-
-        .intro p {
-            font-size: 1.2em;
-            line-height: 1.6;
-            margin-bottom: 1.5em;
-            max-width: 700px;
-            margin: 0 auto;
+        .about h2 {
+            font-size: 2em;
+            margin-bottom: 0.5em;
+            color: #f1c40f;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            animation: glow 2s infinite alternate;
         }
-
-        .highlights {
-            display: flex;
-            justify-content: space-around;
-            gap: 1em;
-            flex-wrap: wrap;
-            margin-top: 1.5em;
+        .services h2 {
+            font-size: 2em;
+            margin-bottom: 0.5em;
+            color: #f1c40f;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            animation: glow 2s infinite alternate;
+        }
+        @keyframes glow {
+            from {
+                text-shadow: 0 0 10px #f1c40f, 0 0 20px #f1c40f, 0 0 30px #f1c40f, 0 0 40px #f1c40f;
+            }
+            to {
+                text-shadow: 0 0 20px #e67e22, 0 0 30px #e67e22, 0 0 40px #e67e22, 0 0 50px #e67e22;
+            }
         }
 
         .highlight {
@@ -49,30 +129,137 @@
             width: 28%;
             transition: transform 0.3s, box-shadow 0.3s;
             text-align: center;
+            min-width: 250px;
         }
-
         .highlight:hover {
             transform: translateY(-5px);
             box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
         }
-
         .highlight h3 {
             font-size: 1.5em;
             color: #3498db;
             margin-bottom: 0.5em;
         }
-
         .highlight p {
             font-size: 1em;
             line-height: 1.6;
         }
-
         .highlight::before {
             content: '✨';
             font-size: 2em;
             color: #f39c12;
             display: block;
-            margin-bottom: 0.3em;
+            margin-bottom: 0.5em;
+        }
+        .highlight:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+            background: linear-gradient(135deg, #f39c12, #e74c3c);
+            color: #fff;
+        }
+        .service-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+            background: linear-gradient(135deg, #f39c12, #e74c3c);
+            color: #fff;
+        }
+        
+        .about, .services, .blog {
+            text-align: center;
+            padding: 2em 1em;
+            background: linear-gradient(120deg, #8e44ad, #3498db);
+            color: #fff;
+            margin-top: 2em;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+        .about h2, .services h2, .blog h2 {
+            font-size: 2em;
+            margin-bottom: 1em;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+        .about p, .services p, .blog p {
+            max-width: 700px;
+            margin: 0 auto 1.5em auto;
+            line-height: 1.7;
+        }
+
+        .service-list {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        .intro {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        .service-item {
+            background: #fff;
+            color: #333;
+            padding: 1em;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+            width: 30%;
+            transition: transform 0.3s;
+        }
+        .service-item:hover {
+            transform: scale(1.05);
+        }
+        .service-item h3 {
+            margin-bottom: 0.5em;
+            color: #3498db;
+        }
+        
+        footer {
+            background: #4a00e0;
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+            font-size: 1rem;
+            text-shadow: 0px 0px 8px rgba(255, 255, 255, 0.2);
+        }
+
+        @media (max-width: 768px) {
+            .highlight, .service-item {
+                width: 45%;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .highlight, .service-item {
+                width: 100%;
+                margin-bottom: 1em;
+            }
+        }
+        @media (max-width: 768px) {
+            .highlight, .service-item {
+                width: 45%;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .highlight, .service-item {
+                width: 100%;
+                margin-bottom: 1em;
+            }
+            header h1 {
+                font-size: 1.5rem;
+            }
+            header p {
+                font-size: 0.9rem;
+            }
+            header #digital-clock {
+                font-size: 1rem;
+            }
+            .intro h2 {
+                font-size: 1.5em;
+            }
+            .about h2, .services h2, .blog h2 {
+                font-size: 1.5em;
+            }
         }
     </style>
 </head>
@@ -81,6 +268,7 @@
 <header>
     <h1>Ingeniero y Desarrollador de Software</h1>
     <p>Innovación, Estrategia y Tecnología al Servicio de Tu Empresa</p>
+    <div id="digital-clock"></div>
     <nav>
         <ul>
             <li><a href="index.html">Inicio</a></li>
@@ -94,28 +282,95 @@
 
 <section class="intro">
     <h2>Potenciando el Futuro de Tu Empresa con Soluciones Tecnológicas de Alto Impacto</h2>
-    <p>Con años de experiencia en el desarrollo de software a medida, me especializo en crear soluciones innovadoras que optimizan el rendimiento y potencian el crecimiento. Desde inteligencia artificial hasta entornos de contenedores, mi experiencia está al servicio de startups y empresas consolidadas que buscan destacarse en el mercado digital.</p>
+    <p>Con años de experiencia en el desarrollo de software a medida, me especializo en crear soluciones innovadoras que optimizan el rendimiento y potencian el crecimiento.</p>
+   </section>
+    <section class="intro">
+    
+        <div class="highlight">
+            <h3>Experiencia</h3>
+            <p>Más de 5 años en el sector, trabajando con empresas de diferentes tamaños y sectores.</p>
+        </div>
+        <div class="highlight">
+            <h3>Habilidades</h3>
+            <p>Conocimiento avanzado en múltiples lenguajes de programación y herramientas tecnológicas.</p>
+        </div>
+        <div class="highlight">
+            <h3>Metodología Ágil</h3>
+            <p>Implemento metodologías ágiles que permiten un desarrollo rápido y eficiente.</p>
+        </div>
+        <div class="highlight">
+            <h3>Visión de Futuro</h3>
+            <p>Siempre en busca de nuevas tendencias y tecnologías para estar a la vanguardia.</p>
+        </div>
+        <div class="highlight">
+            <h3>Colaboración</h3>
+            <p>Trabajo estrechamente con mis clientes para garantizar que sus necesidades sean completamente atendidas.</p>
+        </div>
+        <div class="highlight">
+            <h3>Soporte Continuo</h3>
+            <p>Ofrezco soporte post-lanzamiento para asegurar que el sistema funcione a la perfección.</p>
+        </div>
+    
+</section>
 
-    <div class="highlights">
-        <div class="highlight">
-            <h3>Experiencia a Tu Alcance</h3>
-            <p>Cada proyecto es un nuevo desafío que me permite aplicar mi conocimiento en ingeniería avanzada y adaptarlo a tus necesidades específicas, asegurando soluciones robustas y escalables.</p>
+<section class="about">
+    <h2>Sobre Mí</h2>
+    <p>¡Hola! Soy un apasionado ingeniero de software con más de cinco años de experiencia en el sector tecnológico. Desde pequeño, he tenido una curiosidad insaciable por entender cómo funcionan las cosas, lo que me llevó a explorar el mundo de la programación y la tecnología.</p>
+    
+    <p>Mi enfoque se centra en utilizar la tecnología para resolver problemas complejos y mejorar la eficiencia empresarial. Me especializo en el desarrollo de aplicaciones a medida, inteligencia artificial y gestión de proyectos. Cada nuevo desafío es una oportunidad para aprender y crecer, y disfruto profundamente el proceso de convertir ideas en soluciones prácticas y efectivas.</p>
+
+    <p>En mi trayectoria, he trabajado con diversas empresas, desde startups hasta grandes corporaciones, colaborando en proyectos innovadores que han transformado la manera en que operan. Mi filosofía es que la tecnología no solo debe ser funcional, sino también accesible y amigable para el usuario. Por eso, siempre busco crear experiencias intuitivas y agradables.</p>
+    
+    <p>Además de mis habilidades técnicas, valoro la comunicación efectiva y el trabajo en equipo. Creo firmemente que la colaboración es la clave del éxito en cualquier proyecto. Me encanta compartir ideas y aprender de las perspectivas de otros, lo que enriquece mi trabajo y me permite ofrecer soluciones más completas.</p>
+    
+    <p>Cuando no estoy programando, me encontrarás explorando nuevas tecnologías, participando en hackatones o disfrutando de la naturaleza. Estoy constantemente buscando formas de innovar y hacer del mundo un lugar más tecnológico y eficiente.</p>
+    
+    <p>Si estás interesado en colaborar o simplemente deseas charlar sobre tecnología y su impacto en nuestras vidas, ¡no dudes en contactarme!</p>
+</section>
+
+
+<section class="services">
+    <h2>Servicios</h2>
+    <div class="service-list">
+        <div class="service-item">
+            <h3>Desarrollo de Software a Medida</h3>
+            <p>Creación de aplicaciones personalizadas que se adaptan a tus necesidades específicas.</p>
         </div>
-        <div class="highlight">
-            <h3>Transformación Digital</h3>
-            <p>Integro tecnología punta en cada solución para llevar la operativa de tu negocio al siguiente nivel, optimizando procesos y mejorando la competitividad.</p>
+        <div class="service-item">
+            <h3>Consultoría Tecnológica</h3>
+            <p>Asesoramiento en la implementación de tecnologías que impulsen tu negocio.</p>
         </div>
-        <div class="highlight">
-            <h3>Éxito Medible</h3>
-            <p>Mis proyectos están orientados a generar resultados tangibles y medibles, brindando un soporte que maximiza el valor de cada solución implementada.</p>
+        <div class="service-item">
+            <h3>Optimización de Procesos</h3>
+            <p>Análisis y mejora de flujos de trabajo para maximizar la productividad.</p>
         </div>
+        <div class="service-item">
+            <h3>Soporte y Mantenimiento</h3>
+            <p>Servicios de soporte técnico y mantenimiento para asegurar el correcto funcionamiento de tus aplicaciones.</p>
+        </div>
+            <div class="service-item">
+                <h3>Desarrollo Web</h3>
+                <p>Creación de sitios web modernos y responsivos que se adaptan a las necesidades de tu negocio.</p>
+            </div>
     </div>
-    <p>Explora mi <a href="portfolio.html">portafolio</a> y descubre cómo podemos colaborar para llevar tus ideas a la realidad.</p>
+</section>
+
+<section class="blog">
+    <h2>Blog</h2>
+    <p>Comparte mis pensamientos y conocimientos sobre tendencias tecnológicas y mejores prácticas en el desarrollo de software.// Proximamente........</p>
 </section>
 
 <footer>
-    <p>&copy; 2024 Ingeniero y Desarrollador de Software. Innovación y tecnología para el éxito de tu empresa.</p>
+    <p>&copy; 2024 Tu Nombre. Todos los derechos reservados.</p>
 </footer>
 
+<script>
+    function updateClock() {
+        const now = new Date();
+        const digitalClock = document.getElementById('digital-clock');
+        digitalClock.textContent = now.toLocaleTimeString();
+    }
+    setInterval(updateClock, 1000);
+</script>
 </body>
 </html>

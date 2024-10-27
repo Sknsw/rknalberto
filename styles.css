@@ -26,6 +26,7 @@ header nav ul {
     display: flex;
     justify-content: center;
     gap: 15px;
+    flex-wrap: wrap;
 }
 header nav ul li a {
     color: #fff;
@@ -38,7 +39,7 @@ header nav ul li a:hover {
 }
 section {
     padding: 40px 0;
-    width: 80%;
+    width: 90%;
     max-width: 1200px;
     margin: 0 auto;
 }
@@ -193,4 +194,36 @@ footer {
 .contact-info a:hover {
     color: #4a00e0;
     text-decoration: underline;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2rem;
+    }
+    header nav ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+    .service-list {
+        grid-template-columns: 1fr;
+    }
+    .contact h2 {
+        font-size: 2rem;
+    }
+    .contact p {
+        font-size: 1rem;
+    }
+}
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 1.5rem;
+    }
+    header nav ul li a {
+        font-size: 1rem;
+    }
+    .btn-submit {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+    }
 }
