@@ -9,6 +9,7 @@ body {
     line-height: 1.7;
     background: linear-gradient(120deg, #ff5f6d, #ffc371);
     overflow-x: hidden;
+    background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTMg2XxnrW-d7Jf68xIcMy-NrNsh7rSihMd3WI7Zgny-tdtDKhUvelx40U&s');
 }
 header {
     background: linear-gradient(120deg, #4a00e0, #8e2de2);
