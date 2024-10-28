@@ -6,138 +6,187 @@
     <title>Sobre Mí - Ingeniero y Desarrollador de Software</title>
     <link rel="stylesheet" href="styles.css">
     <style>
+        /* Estilos previos aquí... */
+
+        /* Nuevos estilos para las secciones añadidas */
         body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background: linear-gradient(135deg, #f39c12, #e74c3c);
-            color: white;
+            overflow-x: hidden; /* Evita el desplazamiento horizontal */
+            scroll-behavior: smooth; /* Suaviza el desplazamiento al hacer clic en los enlaces del menú */
+            background: linear-gradient(135deg, #ecf0f1, #bdc3c7); /* Fondo degradado */
+            font-family: 'Arial', sans-serif; /* Cambiar tipo de letra */
         }
+
         header {
+            background-color: rgba(52, 152, 219, 0.9);
+            padding: 1.5em;
             text-align: center;
-            padding: 1.5em 0;
-            background: linear-gradient(120deg, #4a00e0, #8e2de2);
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.5s;
         }
-        header #digital-clock {
-            font-size: 1.2rem;
-            font-family: 'Courier New', Courier, monospace;
-            color: #00ffcc;
-            text-shadow: 0 0 8px rgba(0, 255, 204, 0.7), 0 0 16px rgba(0, 255, 204, 0.5);
-            letter-spacing: 0.1em;
-            animation: pulse 1s infinite alternate;
-            margin-bottom: 8px;
+
+        header:hover {
+            background-color: rgba(52, 152, 219, 1);
         }
-        @keyframes pulse {
-            0% {
-                text-shadow: 0 0 8px rgba(0, 255, 204, 0.7), 0 0 16px rgba(0, 255, 204, 0.5);
-            }
-            100% {
-                text-shadow: 0 0 12px rgba(0, 255, 204, 0.9), 0 0 24px rgba(0, 255, 204, 0.7);
-            }
-        }
-        @keyframes pulseText {
-            0% {
-                color: #ffffff;
-            }
-            50% {
-                color: #00ffcc;
-            }
-            100% {
-                color: #ffffff;
-            }
-        }
-        header h1 {
-            margin: 0;
-            font-size: 3em;
-            color: #f1c40f;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-        }
+
         nav ul {
             list-style-type: none;
             padding: 0;
         }
+
         nav ul li {
             display: inline;
-            margin: 0 1.5em;
+            margin: 0 1em;
         }
-        nav ul li a {
-            color: #f1c40f;
+
+        nav a {
             text-decoration: none;
+            color: #fff;
+            transition: color 0.3s;
         }
-        nav ul li a:hover {
-            text-decoration: underline;
+
+        nav a:hover {
+            color: #f1c40f;
         }
-        header h1 {
-            font-size: 1.8rem;
-            font-weight: bold;
-            margin-bottom: 8px;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-            animation: pulseText 1.5s infinite;
-        }
-        .quote-section, .skills-map {
+
+        .projects-section, .testimonials-section {
             max-width: 800px;
             margin: 2em auto;
             padding: 2em;
             border-radius: 10px;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-            background: linear-gradient(135deg, #8e44ad, #3498db);
-            animation: fadeIn 1s ease-in;
+            background: linear-gradient(135deg, #3498db, #8e44ad);
+            opacity: 0;
+            animation: slideIn 0.5s forwards ease-out;
+            position: relative;
+            overflow: hidden;
         }
-        .quote-section h2 {
+
+        @keyframes slideIn {
+            0% {
+                transform: translateY(20px);
+                opacity: 0;
+            }
+            100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .projects-section h2, .testimonials-section h2 {
             font-size: 2.5em;
-            margin-bottom: 0.5em;
             color: #f1c40f;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            animation: fadeIn 0.7s forwards ease-out;
         }
-        .quote-section p {
-            font-size: 1.2em;
-            text-align: center;
-            line-height: 1.6;
-            color: #f1c40f;
-            animation: quoteChange 8s infinite;
-        }
-        .skills-map h2 {
-            font-size: 2em;
-            color: #f1c40f;
-            margin-bottom: 0.5em;
-        }
-        .skills-map .skill {
-            display: inline-block;
-            padding: 0.5em 1em;
-            margin: 0.5em;
-            background-color: #f1c40f;
-            color: #4a00e0;
-            border-radius: 20px;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-        }
-        footer {
-            text-align: center;
-            padding: 2em 0;
-            background: rgba(0, 0, 0, 0.7);
-            color: #f1c40f;
-            font-size: 1.1em;
-        }
-        footer .contact-info {
-            display: flex;
-            justify-content: center;
-            gap: 1.5em;
-            flex-wrap: wrap;
-            margin-top: 1em;
-        }
-        footer .contact-info a {
-            color: #f1c40f;
-            text-decoration: none;
-        }
-        footer .contact-info a:hover {
-            text-decoration: underline;
-        }
-        footer .icon {
-            font-size: 1.3em;
-            color: #00ffcc;
-        }
+
         @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        .project, .testimonial {
+            margin: 1em 0;
+            padding: 1em;
+            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.1);
+            color: #f1c40f;
+            transition: transform 0.3s, background-color 0.3s;
+            opacity: 0; /* Comienza oculto para la animación */
+            animation: fadeInUp 0.5s forwards ease-out;
+            position: relative;
+            overflow: hidden;
+        }
+
+        @keyframes fadeInUp {
+            0% {
+                transform: translateY(20px);
+                opacity: 0;
+            }
+            100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .project:hover, .testimonial:hover {
+            transform: scale(1.02);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+            background-color: rgba(255, 255, 255, 0.2);
+            border-left: 5px solid #f1c40f;
+        }
+
+        .testimonial {
+            font-style: italic;
+            text-align: center;
+        }
+
+        /* Mapa de habilidades */
+        .skills-map {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin: 2em auto;
+        }
+
+        .skill {
+            opacity: 0;
+            animation: fadeInUp 0.5s forwards ease-out;
+            transform: translateY(20px);
+            margin: 0.5em;
+            padding: 1em;
+            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.1);
+            color: #f1c40f;
+            text-align: center;
+            font-size: 1.5em;
+            transition: transform 0.3s, background-color 0.3s, box-shadow 0.3s;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .skill:hover {
+            transform: scale(1.05);
+            background-color: rgba(255, 255, 255, 0.2);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            border: 1px solid #f1c40f; /* Añadir borde en hover */
+        }
+
+        /* Animaciones al desplazarse por la página */
+        .section {
+            opacity: 0;
+            transition: opacity 1s;
+        }
+
+        .section.visible {
+            opacity: 1;
+        }
+
+        /* Efecto de paralaje para el fondo */
+        .parallax {
+            background-image: url('path/to/your/image.jpg'); /* Cambiar a una imagen de fondo */
+            height: 400px;
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            filter: brightness(0.5);
+            position: relative;
+            z-index: -1;
+        }
+
+        .parallax h2 {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: #f1c40f;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            font-size: 3em;
         }
     </style>
 </head>
@@ -156,17 +205,17 @@
     </nav>
 </header>
 
-<section class="about">
+<section class="about section">
     <h2>Mi Enfoque y Experiencia</h2>
     <!-- Sección de información personal como en el HTML anterior -->
 </section>
 
-<section class="quote-section">
+<section class="quote-section section">
     <h2>Citas Inspiradoras</h2>
     <p class="quote">"Innovar es ver lo que todos han visto y pensar lo que nadie más ha pensado."</p>
 </section>
 
-<section class="skills-map">
+<section class="skills-map section">
     <h2>Mapa de Habilidades</h2>
     <div class="skill">Python</div>
     <div class="skill">JavaScript</div>
@@ -179,17 +228,74 @@
     <div class="skill">Machine Learning</div>
     <div class="skill">Agile Methodologies</div>
 </section>
-<section class="quote-section">
-<div class="contact-info">
-    <h1 href="tel:+1234567890" class="icon">📞 +34 641 43 84 06</h1>
-    <h1 href="https://wa.me/1234567890" target="_blank" class="icon">💬 WhatsApp +34 641 43 84 06</h1>
-    <h1 href="mailto:correo@example.com" class="icon">✉️ rodriguezgrxalbert@gmail.com</h1>
-</div>
+
+<section class="projects-section section">
+    <h2>Proyectos Destacados</h2>
+    <div class="project">
+        <h3>Proyecto 1: Aplicación de Gestión de Tareas</h3>
+        <p>Desarrollé una aplicación web para gestionar tareas usando React y Node.js. Incluye autenticación y gestión de usuarios.</p>
+    </div>
+    <div class="project">
+        <h3>Proyecto 2: Plataforma de E-learning</h3>
+        <p>Creé una plataforma de aprendizaje en línea con funcionalidades interactivas y soporte de múltiples idiomas.</p>
+    </div>
+</section>
+
+<section class="testimonials-section section">
+    <h2>Testimonios</h2>
+    <div class="testimonial">
+        <p>"Alberto es un desarrollador excepcional. Su habilidad para resolver problemas es impresionante."</p>
+        <footer>- Juan Pérez, Cliente</footer>
+    </div>
+    <div class="testimonial">
+        <p>"La atención al detalle de Alberto en cada proyecto es notable. ¡Siempre entrega más de lo esperado!"</p>
+        <footer>- María García, Colega</footer>
+    </div>
+</section>
+
+<section class="quote-section section">
+    <div class="contact-info">
+        <h1 href="tel:+1234567890" class="icon">📞 +34 641 43 84 06</h1>
+        <h1 href="https://wa.me/1234567890" target="_blank" class="icon">💬 WhatsApp +34 641 43 84 06</h1>
+        <h1 href="mailto:correo@example.com" class="icon">✉️ rodriguezgrxalbert@gmail.com</h1>
+    </div>
 </section>
 
 <footer>
     <p>&copy; 2024 Alberto Rodriguez. Ingeniero y Desarrollador de Software</p>
 </footer>
+
+<script>
+    function openModal(title, description) {
+        document.getElementById("modalTitle").innerText = title;
+        document.getElementById("modalDescription").innerText = description;
+        document.getElementById("myModal").style.display = "block";
+    }
+    function closeModal() {
+        document.getElementById("myModal").style.display = "none";
+    }
+    window.onclick = function(event) {
+        if (event.target == document.getElementById("myModal")) {
+            closeModal();
+        }
+    }
+
+    // Efecto de desplazamiento para hacer que las secciones se muestren al entrar en el viewport
+    const sections = document.querySelectorAll('.section');
+
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            }
+        });
+    });
+
+    sections.forEach(section => {
+        observer.observe(section);
+    });
+</script>
+
 <script>
     function updateClock() {
         const now = new Date();
