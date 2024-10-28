@@ -126,7 +126,34 @@
             font-size: 1em;
             line-height: 1.6;
         }
-
+        header #digital-clock {
+            font-size: 1.2rem;
+            font-family: 'Courier New', Courier, monospace;
+            color: #00ffcc;
+            text-shadow: 0 0 8px rgba(0, 255, 204, 0.7), 0 0 16px rgba(0, 255, 204, 0.5);
+            letter-spacing: 0.1em;
+            animation: pulse 1s infinite alternate;
+            margin-bottom: 8px;
+        }
+        @keyframes pulse {
+            0% {
+                text-shadow: 0 0 8px rgba(0, 255, 204, 0.7), 0 0 16px rgba(0, 255, 204, 0.5);
+            }
+            100% {
+                text-shadow: 0 0 12px rgba(0, 255, 204, 0.9), 0 0 24px rgba(0, 255, 204, 0.7);
+            }
+        }
+        @keyframes pulseText {
+            0% {
+                color: #ffffff;
+            }
+            50% {
+                color: #00ffcc;
+            }
+            100% {
+                color: #ffffff;
+            }
+        }
         /* Media Query para dispositivos más pequeños */
         @media (max-width: 768px) {
             .service-item {
@@ -149,6 +176,7 @@
 
 <header>
     <h1>Servicios</h1>
+    <div id="digital-clock"></div>
     <nav>
         <ul>
             <li><a href="index.html">Inicio</a></li>
@@ -188,6 +216,13 @@
 <footer>
     <p>&copy; 2024 Alberto Rodriguez.Ingeniero y Desarrollador de Software</p>
 </footer>
-
+<script>
+    function updateClock() {
+        const now = new Date();
+        const digitalClock = document.getElementById('digital-clock');
+        digitalClock.textContent = now.toLocaleTimeString();
+    }
+    setInterval(updateClock, 1000);
+</script>
 </body>
 </html>
