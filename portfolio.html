@@ -6,152 +6,143 @@
     <title>Portafolio - Ingeniero y Desarrollador de Software</title>
     <link rel="stylesheet" href="styles.css">
     <style>
-        /* Estilos específicos para la sección .portfolio */
-        .portfolio {
-            text-align: center;
-            padding: 2em 1em;
-            background: linear-gradient(135deg, #8e44ad, #3498db);
+        /* Estilos generales */
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        header {
+            background: linear-gradient(135deg, #2c3e50, #2980b9);
             color: white;
-            border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            padding: 3em 0;
             position: relative;
-            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
         }
+
         header h1 {
-            font-size: 1.8rem;
+            font-size: 1.5em;
             font-weight: bold;
-            margin-bottom: 8px;
+            margin: 0;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-            animation: pulseText 1.5s infinite;
         }
-        header p {
-            font-size: 1rem;
-            margin-bottom: 15px;
-        }
+
         header #digital-clock {
-            font-size: 1.2rem;
+            font-size: 1.6rem;
             font-family: 'Courier New', Courier, monospace;
             color: #00ffcc;
-            text-shadow: 0 0 8px rgba(0, 255, 204, 0.7), 0 0 16px rgba(0, 255, 204, 0.5);
-            letter-spacing: 0.1em;
-            animation: pulse 1s infinite alternate;
-            margin-bottom: 8px;
+            margin-top: 0.5em;
         }
-        @keyframes pulse {
-            0% {
-                text-shadow: 0 0 8px rgba(0, 255, 204, 0.7), 0 0 16px rgba(0, 255, 204, 0.5);
-            }
-            100% {
-                text-shadow: 0 0 12px rgba(0, 255, 204, 0.9), 0 0 24px rgba(0, 255, 204, 0.7);
-            }
+
+        header nav {
+            margin-top: 1em;
         }
-        @keyframes pulseText {
-            0% {
-                color: #ffffff;
-            }
-            50% {
-                color: #00ffcc;
-            }
-            100% {
-                color: #ffffff;
-            }
-        }
+
         header nav ul {
             list-style: none;
             display: flex;
             justify-content: center;
-            gap: 10px;
-            flex-wrap: wrap;
+            gap: 25px;
+            padding: 0;
         }
+
+        header nav a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            transition: background 0.3s, transform 0.2s;
+        }
+
+        header nav a:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: scale(1.05);
+        }
+
+        .portfolio {
+            text-align: center;
+            padding: 3em 1em;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+            margin: 3em auto;
+            max-width: 1200px;
+        }
+
         .portfolio h2 {
-            font-size: 2em;
+            font-size: 2.8em;
             margin-bottom: 0.5em;
-            color: #f1c40f;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-            animation: glow 2s infinite alternate;
+            color: #3498db;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
         }
-        @keyframes glow {
-            from {
-                text-shadow: 0 0 10px #f1c40f, 0 0 20px #f1c40f, 0 0 30px #f1c40f, 0 0 40px #f1c40f;
-            }
-            to {
-                text-shadow: 0 0 20px #e67e22, 0 0 30px #e67e22, 0 0 40px #e67e22, 0 0 50px #e67e22;
-            }
-        }
-        .portfolio::before {
-            content: "";
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle, rgba(255,255,255,0.1), transparent 60%);
-            animation: rotate 10s linear infinite;
-        }
-        @keyframes rotate {
-            from {transform: rotate(0);}
-            to {transform: rotate(360deg);}
-        }
-        .portfolio h2 {
-            font-size: 2.5em;
-            margin-bottom: 0.5em;
-            color: #f1c40f;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-        }
+
         .portfolio p {
-            font-size: 1.2em;
-            line-height: 1.6;
-            margin-bottom: 1.5em;
+            font-size: 1.3em;
+            margin-bottom: 2em;
             max-width: 700px;
             margin: 0 auto;
         }
+
         .projects {
             display: flex;
-            justify-content: space-around;
-            gap: 1em;
+            justify-content: space-between;
+            gap: 2em;
             flex-wrap: wrap;
             margin-top: 1.5em;
         }
+
         .project {
             background: #ffffff;
             color: #333;
-            padding: 1.5em;
+            padding: 2em;
             border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
-            width: 28%;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+            width: 30%;
             transition: transform 0.3s, box-shadow 0.3s;
             text-align: center;
             position: relative;
             overflow: hidden;
+            border: 1px solid #ddd;
         }
+
         .project:hover {
             transform: translateY(-5px);
             box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
             background: linear-gradient(135deg, #f39c12, #e74c3c);
             color: #fff;
         }
+
         .project h3 {
-            font-size: 1.5em;
-            color: #3498db;
+            font-size: 1.7em;
             margin-bottom: 0.5em;
         }
+
         .project p {
-            font-size: 1em;
+            font-size: 1.1em;
             line-height: 1.6;
         }
+
         .project a {
             display: inline-block;
             margin-top: 1em;
-            padding: 0.5em 1em;
+            padding: 0.7em 1.5em;
             background: #3498db;
             color: white;
             text-decoration: none;
             border-radius: 5px;
-            transition: background 0.3s;
+            transition: background 0.3s, transform 0.2s;
         }
+
         .project a:hover {
             background: #2980b9;
+            transform: scale(1.05);
         }
+
         /* Estilos para el modal */
         .modal {
             display: none;
@@ -164,21 +155,25 @@
             overflow: auto;
             background-color: rgba(0, 0, 0, 0.5);
         }
+
         .modal-content {
             background-color: #fefefe;
-            margin: 15% auto;
+            margin: 10% auto;
             padding: 20px;
             border: 1px solid #888;
             width: 80%;
             max-width: 600px;
             border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
         }
+
         .close {
             color: #aaa;
             float: right;
             font-size: 28px;
             font-weight: bold;
         }
+
         .close:hover,
         .close:focus {
             color: black;
@@ -198,40 +193,16 @@
                 width: 90%;
             }
 
+            header h1 {
+                font-size: 2.5em;
+            }
+
             .portfolio h2 {
                 font-size: 2em;
             }
 
             .portfolio p {
-                font-size: 1em;
-            }
-        }
-        header #digital-clock {
-            font-size: 1.2rem;
-            font-family: 'Courier New', Courier, monospace;
-            color: #00ffcc;
-            text-shadow: 0 0 8px rgba(0, 255, 204, 0.7), 0 0 16px rgba(0, 255, 204, 0.5);
-            letter-spacing: 0.1em;
-            animation: pulse 1s infinite alternate;
-            margin-bottom: 8px;
-        }
-        @keyframes pulse {
-            0% {
-                text-shadow: 0 0 8px rgba(0, 255, 204, 0.7), 0 0 16px rgba(0, 255, 204, 0.5);
-            }
-            100% {
-                text-shadow: 0 0 12px rgba(0, 255, 204, 0.9), 0 0 24px rgba(0, 255, 204, 0.7);
-            }
-        }
-        @keyframes pulseText {
-            0% {
-                color: #ffffff;
-            }
-            50% {
-                color: #00ffcc;
-            }
-            100% {
-                color: #ffffff;
+                font-size: 1.1em;
             }
         }
     </style>
@@ -246,7 +217,7 @@
             <li><a href="index.html">Inicio</a></li>
             <li><a href="about.html">Sobre Mí</a></li>
             <li><a href="services.html">Servicios</a></li>
-            <li><a href="contact.html">Contacto</a></li>
+            <li><a href="reservar.html">Contacto</a></li>
         </ul>
     </nav>
 </header>
@@ -280,82 +251,58 @@
         <div class="project">
             <h3>App de Recomendación de Películas 🎬</h3>
             <p>Recomendaciones de películas personalizadas. Lenguajes: Python, Flask, HTML, CSS.</p>
-            <a href="javascript:void(0)" onclick="openModal('App de Recomendación de Películas 🎬', 'Aplicación para recomendar películas en base a preferencias.')">Ver Proyecto</a>
+            <a href="javascript:void(0)" onclick="openModal('App de Recomendación de Películas 🎬', 'Aplicación para recomendar películas en base
+            a preferencias.')">Ver Proyecto</a>
         </div>
         <div class="project">
             <h3>Simulador de Bolsa 📈</h3>
             <p>Simulador de inversiones para aprender a operar en bolsa. Lenguajes: Python, Django, SQL.</p>
-            <a href="javascript:void(0)" onclick="openModal('Simulador de Bolsa 📈', 'Simulador de inversiones con datos en tiempo real.')">Ver Proyecto</a>
-        </div>
-        <div class="project">
-            <h3>Sistema de Inventario 🔢</h3>
-            <p>Gestión de inventarios y reportes detallados. Lenguajes: PHP, MySQL, Bootstrap.</p>
-            <a href="javascript:void(0)" onclick="openModal('Sistema de Inventario 🔢', 'Sistema para gestionar inventarios y reportes en tiempo real.')">Ver Proyecto</a>
-        </div>
-        <div class="project">
-            <h3>Plataforma de Cursos Online 💻</h3>
-            <p>Creación y distribución de cursos online. Lenguajes: React, Firebase, Node.js.</p>
-            <a href="javascript:void(0)" onclick="openModal('Plataforma de Cursos Online 💻', 'Aplicación para cursos en línea con autenticación y gestión de contenido.')">Ver Proyecto</a>
-        </div>
-        <div class="project">
-            <h3>Aplicación de Clima ☀️</h3>
-            <p>Consulta el clima en tiempo real de cualquier ciudad. Lenguajes: JavaScript, API OpenWeather.</p>
-            <a href="javascript:void(0)" onclick="openModal('Aplicación de Clima ☀️', 'Aplicación para verificar el clima en diferentes ubicaciones.')">Ver Proyecto</a>
+            <a href="javascript:void(0)" onclick="openModal('Simulador de Bolsa 📈', 'Simulador para aprender a invertir en la bolsa.')">Ver Proyecto</a>
         </div>
     </div>
 </section>
 
-<!-- Modal para ver más detalles del proyecto -->
+<!-- Modal para mostrar más información -->
 <div id="myModal" class="modal">
     <div class="modal-content">
         <span class="close" onclick="closeModal()">&times;</span>
-        <h2 id="modalTitle"></h2>
-        <p id="modalDescription"></p>
+        <h2 id="modal-title"></h2>
+        <p id="modal-description"></p>
     </div>
 </div>
 
-<footer>
-    <p>&copy; 2024 Mi Alberto Rodriguez.Todos los derechos reservados.</p>
-</footer>
+<script>
+    // Reloj digital
+    function startClock() {
+        const clock = document.getElementById('digital-clock');
+        setInterval(() => {
+            const now = new Date();
+            clock.textContent = now.toLocaleTimeString();
+        }, 1000);
+    }
 
-<script>
+    // Funciones para abrir y cerrar el modal
     function openModal(title, description) {
-        document.getElementById("modalTitle").innerText = title;
-        document.getElementById("modalDescription").innerText = description;
-        document.getElementById("myModal").style.display = "block";
+        document.getElementById('modal-title').innerText = title;
+        document.getElementById('modal-description').innerText = description;
+        document.getElementById('myModal').style.display = "block";
     }
+
     function closeModal() {
-        document.getElementById("myModal").style.display = "none";
+        document.getElementById('myModal').style.display = "none";
     }
+
+    // Iniciar el reloj digital
+    startClock();
+
+    // Cerrar el modal al hacer clic fuera de él
     window.onclick = function(event) {
-        if (event.target == document.getElementById("myModal")) {
+        const modal = document.getElementById('myModal');
+        if (event.target === modal) {
             closeModal();
         }
     }
-</script>
-<script>
-    function openModal(title, description) {
-        document.getElementById("modalTitle").innerText = title;
-        document.getElementById("modalDescription").innerText = description;
-        document.getElementById("myModal").style.display = "block";
-    }
-    function closeModal() {
-        document.getElementById("myModal").style.display = "none";
-    }
-    window.onclick = function(event) {
-        if (event.target == document.getElementById("myModal")) {
-            closeModal();
-        }
-    }
-</script>
-<script>
-    function updateClock() {
-        const now = new Date();
-        const digitalClock = document.getElementById('digital-clock');
-        digitalClock.textContent = now.toLocaleTimeString();
-    }
-    setInterval(updateClock, 1000);
 </script>
 
 </body>
-</html>
+</html> 
