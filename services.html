@@ -8,7 +8,7 @@
     <style>
         body {
             margin: 0;
-            font-family: Arial, sans-serif;
+            font-family: 'Courier New', Courier, monospace; /* Fuente monoespaciada */
             background: linear-gradient(135deg, #8e44ad, #3498db);
             color: white;
             background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTMg2XxnrW-d7Jf68xIcMy-NrNsh7rSihMd3WI7Zgny-tdtDKhUvelx40U&s');
@@ -18,12 +18,12 @@
         header {
             text-align: center;
             padding: 2em 0;
-            background: rgba(52, 152, 219, 0.8);
+            background: rgba(52, 152, 219, 0.8); /* Fondo semitransparente */
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
         }
         header h1 {
-            font-size: 1.5em;
-            color: #f1c40f;
+            font-size: 2.5em; /* Tamaño de fuente mayor */
+            color: #00ffcc;
             text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5);
         }
         nav ul {
@@ -32,75 +32,89 @@
             margin: 1.5em 0 0 0;
             display: flex;
             justify-content: center;
-            gap: 15px;
+            gap: 15px; /* Espaciado entre los enlaces */
         }
         nav ul li a {
-            color: #f1c40f;
+            color: #f1c40f; /* Color de enlace */
             text-decoration: none;
             transition: color 0.3s;
         }
         nav ul li a:hover {
-            color: #00ffcc;
+            color: #00ffcc; /* Color al pasar el ratón */
             text-decoration: underline;
         }
         #digital-clock {
             font-size: 1.5rem;
-            font-family: 'Courier New', Courier, monospace;
-            color: #00ffcc;
+            color: #00ffcc; /* Color cibernético */
             text-shadow: 0 0 8px rgba(0, 255, 204, 0.7), 0 0 16px rgba(0, 255, 204, 0.5);
             margin: 0.5em 0;
         }
         .services {
             text-align: center;
             padding: 2em 1em;
-            background: rgba(255, 255, 255, 0.1);
+            background: rgba(255, 255, 255, 0.1); /* Fondo semi-transparente */
             backdrop-filter: blur(10px);
             border-radius: 10px;
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
             margin: 2em auto;
-            max-width: 800px;
+            max-width: 90%; /* Ajuste del max-width */
+            position: relative; /* Para el efecto de brillo */
+            animation: fadeIn 1s; /* Animación al cargar */
         }
+      
         .services h2 {
             font-size: 2.5em;
             margin-bottom: 1em;
-            color: #f1c40f;
+            color: #f1c40f; /* Color amarillo */
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
             animation: glow 1.5s infinite alternate;
         }
         @keyframes glow {
-            from { text-shadow: 0 0 10px #f1c40f, 0 0 20px #f1c40f; }
-            to { text-shadow: 0 0 20px #e67e22, 0 0 30px #e67e22; }
+            from { text-shadow: 0 0 20px #e67e22, 0 0 30px #e67e22; }
+            to { text-shadow: 0 0 20px #00ffcc, 0 0 30px #00ffcc; }
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        @keyframes slideDown {
+            from { transform: translateY(-20px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
         }
         .service-list {
             display: flex;
             flex-wrap: wrap;
-            justify-content: space-around;
+            justify-content: space-between; /* Espaciado uniforme */
             margin-top: 1.5em;
         }
         .service-item {
-            background: #ffffff;
-            color: #333;
+            background: #ffffff; /* Fondo blanco */
+            color: #333; /* Color de texto oscuro */
             padding: 1.5em;
             border-radius: 8px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
-            width: 28%;
+            flex: 1 1 calc(30% - 2em); /* Uso de flex para un ancho adaptable */
             transition: transform 0.3s, box-shadow 0.3s, background 0.3s, color 0.3s;
             text-align: center;
-            margin: 1em;
+            margin: 1em; /* Espaciado entre elementos */
+            position: relative; /* Para el efecto de brillo */
+            overflow: hidden; /* Para evitar desbordamientos */
         }
         .service-item:hover {
-            transform: translateY(-5px);
+            transform: translateY(-5px); /* Efecto de elevación al pasar el ratón */
             box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
-            background: linear-gradient(135deg, #f39c12, #e74c3c);
-            color: #fff;
+            background: linear-gradient(45deg, #80ffdb, #1e1e1e); /* Fondo al pasar el ratón */
+            color: #fff; /* Color de texto blanco al pasar el ratón */
         }
         .service-item h3 {
             font-size: 1.5em;
             margin-bottom: 0.5em;
+            color: #00ffcc;
         }
         .service-item p {
             font-size: 1em;
             line-height: 1.6;
+            color: #1e1e1e;
         }
         footer {
             text-align: center;
@@ -113,15 +127,15 @@
         }
         @media (max-width: 768px) {
             .service-item {
-                width: 45%;
+                flex: 1 1 calc(45% - 2em); /* Ajuste del ancho en pantallas pequeñas */
             }
         }
         @media (max-width: 480px) {
             .service-item {
-                width: 90%;
+                flex: 1 1 calc(90% - 2em); /* Ajuste del ancho en pantallas muy pequeñas */
             }
             .services h2 {
-                font-size: 2em;
+                font-size: 2em; /* Tamaño de fuente menor en pantallas pequeñas */
             }
         }
     </style>
@@ -141,7 +155,7 @@
     </nav>
 </header>
 
-<section class="services">
+<section class="services highlight">
     <h2>Mis Servicios</h2>
     <div class="service-list">
         <div class="service-item">
@@ -163,6 +177,26 @@
         <div class="service-item">
             <h3>🛠️ Configuración de Entornos Virtuales y Contenedores</h3>
             <p>Implementación de entornos virtualizados con Docker y Kubernetes para mayor escalabilidad y seguridad en tus aplicaciones.</p>
+        </div>
+        <div class="service-item">
+            <h3>📱 Desarrollo de Aplicaciones Móviles</h3>
+            <p>Creación de aplicaciones móviles para iOS y Android, enfocadas en la experiencia del usuario y la optimización del rendimiento.</p>
+        </div>
+        <div class="service-item">
+            <h3>🔒 Seguridad Informática</h3>
+            <p>Auditoría de sistemas y desarrollo de estrategias de seguridad para proteger tus datos y mantener la integridad de tu información.</p>
+        </div>
+        <div class="service-item">
+            <h3>🌐 Desarrollo Web Full Stack</h3>
+            <p>Desarrollo completo de aplicaciones web, desde la interfaz de usuario hasta la base de datos, con tecnologías modernas y escalables.</p>
+        </div>
+        <div class="service-item">
+            <h3>📈 Análisis de Datos y Visualización</h3>
+            <p>Transformación de datos complejos en visualizaciones claras y comprensibles para la toma de decisiones informadas.</p>
+        </div>
+        <div class="service-item">
+            <h3>🗂️ Integración de APIs y Microservicios</h3>
+            <p>Desarrollo de soluciones que permiten la comunicación y el intercambio de datos entre diferentes servicios y plataformas.</p>
         </div>
     </div>
 </section>
