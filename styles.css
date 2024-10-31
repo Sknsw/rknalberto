@@ -57,9 +57,9 @@ footer {
     font-size: 1rem;
 }
 /* Glamorous services styling */
-.services {
+.services.service-list {
     padding: 60px 20px;
-    background-color: #f8f9fa;
+    background-color: #242525;
 }
 
 .service-list {
