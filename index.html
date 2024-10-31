@@ -111,6 +111,8 @@
         .highlight:hover {
             transform: translateY(-5px);
             box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+            background: #007acc;
+            color: white;
         }
         .service-item {
             background: #333333;
@@ -174,6 +176,129 @@
             .intro, .service-list { padding: 20px; }
             .booking-button, .call-button { font-size: 0.9rem; padding: 10px 15px; }
         }
+        /* Efecto de brillo alrededor del contenedor */
+        .intro::before {
+            content: "";
+            position: absolute;
+            width: 120%;
+            height: 120%;
+            top: -10%;
+            left: -10%;
+            background: linear-gradient(45deg, #80ffdb, #1e1e1e);
+            filter: blur(30px);
+            z-index: -1;
+            border-radius: 20px;
+        }
+        /* Animaciones */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        @keyframes slideDown {
+            from { transform: translateY(-20px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        @keyframes slideUp {
+            from { transform: translateY(20px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        @keyframes zoomIn {
+            from { transform: scale(0.9); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
+         /* Efecto de brillo alrededor del contenedor */
+         .highlight::before {
+            content: "";
+            position: absolute;
+            width: 120%;
+            height: 120%;
+            top: -10%;
+            left: -10%;
+            background: linear-gradient(45deg, #80ffdb, #1e1e1e);
+            filter: blur(30px);
+            z-index: -1;
+            border-radius: 20px;
+        }
+        /* Animaciones */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        @keyframes slideDown {
+            from { transform: translateY(-20px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        @keyframes slideUp {
+            from { transform: translateY(20px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        @keyframes zoomIn {
+            from { transform: scale(0.9); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
+ /* Efecto de brillo alrededor del contenedor */
+         .about::before {
+            content: "";
+            position: absolute;
+            width: 120%;
+            height: 120%;
+            top: -10%;
+            left: -10%;
+            background: linear-gradient(45deg, #80ffdb, #1e1e1e);
+            filter: blur(30px);
+            z-index: -1;
+            border-radius: 20px;
+        }
+        /* Animaciones */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        @keyframes slideDown {
+            from { transform: translateY(-20px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        @keyframes slideUp {
+            from { transform: translateY(20px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        @keyframes zoomIn {
+            from { transform: scale(0.9); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
+
+         /* Efecto de brillo alrededor del contenedor */
+         .service-item::before {
+            content: "";
+            position: absolute;
+            width: 120%;
+            height: 120%;
+            top: -10%;
+            left: -10%;
+            background: linear-gradient(45deg, #80ffdb, #1e1e1e);
+            filter: blur(30px);
+            z-index: -1;
+            border-radius: 20px;
+        }
+        /* Animaciones */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        @keyframes slideDown {
+            from { transform: translateY(-20px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        @keyframes slideUp {
+            from { transform: translateY(20px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        @keyframes zoomIn {
+            from { transform: scale(0.9); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
+        
+
     </style>
     
 </head>
