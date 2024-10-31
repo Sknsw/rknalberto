@@ -17,7 +17,7 @@
     <!-- Metaetiqueta para robots de motores de búsqueda -->
     <meta name="robots" content="index, follow, programación, ">
     <style>
-        /* Reset general */
+        /* Estilos generales */
         * {
             margin: 0;
             padding: 0;
@@ -48,44 +48,6 @@
             top: 0;
             z-index: 10;
         }
-        header h1 {
-            font-size: 2.5rem;
-            font-weight: 700;
-            margin-bottom: 15px;
-            text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7);
-        }
-        header p {
-            font-size: 1.4rem;
-            margin-bottom: 20px;
-            font-style: italic;
-        }
-        header nav ul {
-            list-style: none;
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            padding: 0;
-            flex-wrap: wrap;
-        }
-        header nav ul li a {
-            color: #fff;
-            text-decoration: none;
-            padding: 10px 15px;
-            border: 2px solid transparent;
-            border-radius: 5px;
-            transition: background 0.4s, border 0.4s;
-            font-weight: 500;
-        }
-        header nav ul li a:hover {
-            background: rgba(255, 255, 255, 0.2);
-            border: 2px solid #fff;
-        }
-        header #digital-clock {
-            font-size: 1.2rem;
-            color: #00ffcc;
-            text-shadow: 0 0 8px rgba(0, 255, 204, 0.8);
-            margin-top: 15px;
-        }
     
         /* Sección principal */
         section {
@@ -99,60 +61,31 @@
             animation: fadeIn 1s ease-out;
             position: relative;
         }
-        section:hover {
-            transform: translateY(-5px);
-        }
     
-        /* Introducción */
-        .intro {
-            text-align: center;
-            padding: 30px;
-            background: linear-gradient(135deg, #005f5f, #007acc);
-            color: white;
-            border-radius: 12px;
-            margin-bottom: 20px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
-            animation: slideDown 1s ease-out;
+        /* Estilo de servicios */
+        .services {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
         }
-    
-        /* Estilo de servicios y botones */
-        .highlight, .service-item {
+        .service-item {
             background: #333333;
             color: #f0f0f0;
             padding: 20px;
             border-radius: 10px;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
             transition: transform 0.3s, box-shadow 0.3s;
-            margin: 13px;
-            position: relative;
-            overflow: hidden;
-            animation: zoomIn 1s ease-out;
+            width: calc(50% - 20px); /* Alinea al 50% en pantallas grandes */
+            text-align: center;
         }
-        .highlight:hover, .service-item:hover {
-            transform: translateY(-5px);
+        .service-item:hover {
+            transform: scale(1.05);
             box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
         }
     
-        /* Botones de reserva y llamada */
-        .booking-button, .call-button {
-            display: inline-block;
-            margin-top: 20px;
-            padding: 12px 20px;
-            background-color: #80ffdb;
-            color: #1e1e1e;
-            text-decoration: none;
-            font-size: 1rem;
-            font-weight: bold;
-            border-radius: 5px;
-            transition: background-color 0.3s, box-shadow 0.3s;
-        }
-        .booking-button:hover, .call-button:hover {
-            background-color: #66ccb5;
-            box-shadow: 0 0 15px rgba(128, 255, 219, 0.8);
-        }
-    
         /* Efecto de brillo */
-        .container::before, .highlight::before, .service-item::before {
+        .service-item::before {
             content: "";
             position: absolute;
             width: 120%;
@@ -165,43 +98,22 @@
             border-radius: 20px;
         }
     
-        /* Animaciones */
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-        @keyframes slideDown {
-            from { transform: translateY(-20px); opacity: 0; }
-            to { transform: translateY(0); opacity: 1; }
-        }
-        @keyframes slideUp {
-            from { transform: translateY(20px); opacity: 0; }
-            to { transform: translateY(0); opacity: 1; }
-        }
-        @keyframes zoomIn {
-            from { transform: scale(0.9); opacity: 0; }
-            to { transform: scale(1); opacity: 1; }
-        }
-    
-        /* Media queries */
+        /* Media queries para pantallas pequeñas */
         @media (max-width: 768px) {
             .service-item {
-                width: 100%;
+                width: 100%; /* Ocupa el 100% de ancho en pantallas medianas */
             }
         }
-        @media (max-width: 600px) {
-            h2 {
-                font-size: 24px;
-            }
-            p {
-                font-size: 14px;
-            }
-            .booking-button, .call-button {
-                font-size: 16px;
-                padding: 10px 20px;
+    
+        /* Media queries para pantallas muy pequeñas */
+        @media (max-width: 480px) {
+            .service-item {
+                width: 100%; /* Ocupa el 100% de ancho en pantallas pequeñas */
+                margin-bottom: 15px;
             }
         }
     </style>
+    
     
     
 </head>
