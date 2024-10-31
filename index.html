@@ -172,6 +172,19 @@
                
             
         }
+        @media (max-width: 768px) {
+            .service-item {
+                flex: 1 1 calc(45% - 2em); /* Ajuste del ancho en pantallas pequeñas */
+            }
+        }
+        @media (max-width: 480px) {
+            .service-item {
+                flex: 1 1 calc(90% - 2em); /* Ajuste del ancho en pantallas muy pequeñas */
+            }
+            .services h2 {
+                font-size: 2em; /* Tamaño de fuente menor en pantallas pequeñas */
+            }
+        }
     </style>
     
 </head>
