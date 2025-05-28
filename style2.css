@@ -1,0 +1,202 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Courier New', Courier, monospace;
+    color: #f0f0f0;
+    background: #1e1e1e;
+    line-height: 1.6;
+}
+
+header {
+    background: linear-gradient(135deg, #007acc, #1e1e1e);
+    color: #fff;
+    text-align: center;
+    padding: 60px 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+    position: relative;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
+}
+
+header p {
+    font-size: 1.3rem;
+    font-style: italic;
+    margin-bottom: 20px;
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+header nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 15px;
+    border-radius: 6px;
+    font-weight: 500;
+    transition: background 0.3s, border 0.3s;
+}
+
+header nav ul li a:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid #fff;
+}
+
+#digital-clock {
+    font-size: 1.1rem;
+    color: #00ffcc;
+    text-shadow: 0 0 6px rgba(0, 255, 204, 0.6);
+    margin-top: 15px;
+}
+
+section {
+    background: #252526;
+    margin: 40px auto;
+    padding: 40px 20px;
+    max-width: 1000px;
+    border-radius: 10px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.35);
+    transition: transform 0.3s;
+    position: relative;
+}
+
+section:hover {
+    transform: translateY(-4px);
+}
+
+.intro,
+.highlight,
+.about,
+.service-item {
+    position: relative;
+    border-radius: 10px;
+    background: #2d2d2d;
+    color: #f0f0f0;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
+    padding: 25px;
+    margin-bottom: 20px;
+    animation: fadeIn 0.8s ease;
+    z-index: 1;
+}
+
+.intro {
+    text-align: center;
+    background: linear-gradient(135deg, #005f5f, #007acc);
+    color: white;
+}
+
+.highlight:hover,
+.service-item:hover {
+    background: #007acc;
+    color: #fff;
+    transform: translateY(-5px);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.4);
+}
+
+.service-item {
+    width: calc(50% - 20px);
+    text-align: center;
+    transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.service-item h3 {
+    font-size: 1.3rem;
+    color: #00ffcc;
+    margin-bottom: 10px;
+}
+
+.service-item p {
+    font-size: 1rem;
+    color: #e0e0e0;
+}
+
+/* Botones */
+.booking-button,
+.call-button {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 20px;
+    background-color: #80ffdb;
+    color: #1e1e1e;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    animation: zoomIn 0.6s ease-out;
+}
+
+.booking-button:hover,
+.call-button:hover {
+    background-color: #66ccb5;
+    box-shadow: 0 0 12px rgba(128, 255, 219, 0.6);
+}
+
+/* Efecto ::before más suave */
+.intro::before,
+.highlight::before,
+.about::before,
+.service-item::before {
+    content: "";
+    position: absolute;
+    top: -8%;
+    left: -8%;
+    width: 116%;
+    height: 116%;
+    background: linear-gradient(45deg, #80ffdb, #1e1e1e);
+    filter: blur(18px);
+    z-index: -1;
+    border-radius: 20px;
+    opacity: 0.5;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 1em 0;
+    background: rgba(0, 0, 0, 0.6);
+    margin-top: 3em;
+    font-size: 0.9rem;
+}
+
+/* Animaciones */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+@keyframes zoomIn {
+    from { transform: scale(0.95); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+/* Responsivo */
+@media (max-width: 800px) {
+    header h1 { font-size: 2rem; }
+    header p { font-size: 1.1rem; }
+    .service-item { width: 100%; margin: 10px 0; }
+}
+
+@media (max-width: 600px) {
+    header h1 { font-size: 1.7rem; }
+    header p { font-size: 1rem; }
+    .intro, .highlight, .about, .service-item {
+        padding: 20px;
+    }
+    .booking-button, .call-button {
+        font-size: 0.9rem;
+        padding: 10px 15px;
+    }
+}
