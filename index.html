@@ -25,7 +25,59 @@
   <meta property="og:type" content="website">
 
  <link rel="stylesheet" href="style2.css" />
+ <style>
+    /* BOTÓN WHATSAPP */
+    .whatsapp-float {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        z-index: 999;
+        width: 60px;
+        height: 60px;
+        background-color: #25D366;
+        border-radius: 50%;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .whatsapp-float img {
+        width: 35px;
+        height: 35px;
+    }
 
+    /* NUEVA SECCIÓN DESTACADA */
+    .call-to-action {
+        background: linear-gradient(to right, #1a1a1a, #333);
+        color: white;
+        padding: 50px 20px;
+        text-align: center;
+        border-radius: 20px;
+        margin: 40px auto;
+        max-width: 900px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+    }
+    .call-to-action h2 {
+        font-size: 2.5em;
+        margin-bottom: 20px;
+    }
+    .call-to-action p {
+        font-size: 1.2em;
+        margin-bottom: 30px;
+    }
+    .cta-button {
+        background-color: #f39c12;
+        color: white;
+        padding: 15px 30px;
+        font-size: 1em;
+        text-decoration: none;
+        border-radius: 30px;
+        transition: background 0.3s ease;
+    }
+    .cta-button:hover {
+        background-color: #e67e22;
+    }
+</style>
 </head>
 <body>
 
@@ -133,6 +185,21 @@
     </div>
 </section>
 
+<!-- NUEVA SECCIÓN ALUCINANTE -->
+<section class="call-to-action">
+    <h2>¡Transforma tu futuro digital ahora!</h2>
+    <p>
+        🚀 Desde bots inteligentes hasta sistemas de pago automatizados, tu idea puede ser la próxima gran innovación.
+        ¿Listo para llevar tu proyecto al siguiente nivel?
+    </p>
+    <a href="reservar.html" class="cta-button">Reserva tu consultoría gratuita</a>
+</section>
+
+<!-- BOTÓN FLOTANTE DE WHATSAPP -->
+<a href="https://wa.me/34641438406" class="whatsapp-float" target="_blank" title="Contáctame por WhatsApp">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/WhatsApp_icon.png" alt="WhatsApp" />
+</a>
+
 <footer>
     <p>&copy; 2024 Ingeniero y Desarrollador de Software. Todos los derechos reservados.</p>
 </footer>
@@ -183,7 +250,7 @@
     "addressLocality": "Madrid",
     "addressCountry": "ES"
   },
-  "telephone": "+34 600 000 000"
+  "telephone": "+34 641 43 84 06"
 }
 </script>
 
