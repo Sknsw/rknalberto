@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sobre Mí - Ingeniero y Desarrollador de Software</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles2.css">
     <style>
         body {
             margin: 0;
@@ -29,24 +29,7 @@
             color: #00ffcc; /* Color cibernético */
             text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7);
         }
-        nav ul {
-            list-style-type: none;
-            padding: 10px 0;
-            margin: 1.5em 0 0 0;
-        }
-        nav ul li {
-            display: inline;
-            margin: 0 1.5em;
-        }
-        nav ul li a {
-            color: #00ffcc; /* Color de enlaces */
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-        nav ul li a:hover {
-            color: #f39c12; /* Color al pasar el ratón */
-            text-decoration: underline;
-        }
+
         #digital-clock {
             font-size: 1.5rem;
             color: #00ffcc; /* Color cibernético */
@@ -109,6 +92,36 @@
             from { opacity: 0; }
             to { opacity: 1; }
         }
+
+        nav ul {
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+nav a {
+  font-weight: 700;
+  font-size: 16px;
+  color: #0f172a;
+  background-color: #00f7c3;
+  padding: 10px 18px;
+  border-radius: 30px;
+  text-decoration: none;
+  box-shadow: 0 4px 10px rgba(0, 247, 195, 0.6);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+nav a:hover,
+nav a[aria-current="page"] {
+  background-color: #008a73;
+  color: #f0f0f0;
+  box-shadow: 0 0 15px #00f7c3;
+}
+
     </style>
     
 </head>
@@ -121,9 +134,7 @@
         <ul>
            <li><a href="index.html">Inicio</a></li>
             <li><a href="about.html">Sobre Mí</a></li>
-            <li><a href="services.html">Servicios</a></li>
             <li><a href="portfolio.html">Portafolio</a></li>
-            <li><a href="reservar.html">Contacto</a></li>
             <li><a href="pago.html">Pagos Seguros</a></li>
         </ul>
     </nav>

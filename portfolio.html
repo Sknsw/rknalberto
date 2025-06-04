@@ -1,390 +1,384 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portafolio - Ingeniero y Desarrollador de Software</title>
-    <link rel="stylesheet" href="styles.css">
-    <style>
-        /* Estilos generales */
-        body {
-            font-family: 'Arial', sans-serif;
-            background: #f0f0f0; 
-            margin: 0;
-            padding: 0;
-            color: #333; /* Color de texto oscuro */
-            line-height: 1.6; /* Espaciado de línea mejorado */
-        }
-    
-        header {
-            background: rgba(52, 152, 219, 0.8); /* Fondo semitransparente */
-            color: white; /* Color de texto blanco */
-            text-align: center; /* Alineación centrada */
-            padding: 3em 0; /* Espaciado vertical */
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Sombra sutil */
-            position: relative; /* Para posicionar el reloj digital */
-        }
-    
-        header h1 {
-            font-size: 2.5em; /* Tamaño de fuente aumentado */
-            font-weight: bold; /* Negrita */
-            margin: 0; /* Sin márgenes */
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Sombra de texto */
-            color: #00ffcc;
-        }
-    
-        header #digital-clock {
-            font-size: 1.6rem; /* Tamaño de fuente para el reloj digital */
-            font-family: 'Courier New', Courier, monospace; /* Fuente monoespaciada */
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Portafolio - Desarrollador Freelance</title>
+  <style>
+    :root {
+      --primary: #00f7c3;
+      --dark: #0f172a;
+      --bg: #141e30;
+      --bg-secondary: #243b55;
+      --text-light: #f0f0f0;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to right, var(--bg), var(--bg-secondary));
+      color: var(--text-light);
+      line-height: 1.6;
+      padding-top: 100px;
+    }
+
+    header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: linear-gradient(135deg, var(--primary), #008a73);
+      padding: 20px 40px;
+      z-index: 1000;
+      box-shadow: 0 8px 20px rgba(0, 247, 195, 0.7);
+      text-align: center;
+      color: var(--dark);
+    }
+
+    header h1 {
+      font-size: 2rem;
+      margin-bottom: 5px;
+    }
+
+    header p {
+      font-size: 1rem;
+    }
+
+    section {
+      padding: 60px 20px;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    h2 {
+      font-size: 2rem;
+      margin-bottom: 30px;
+      border-bottom: 2px solid var(--primary);
+      display: inline-block;
+    }
+
+    .project {
+      display: flex;
+      flex-direction: column;
+      background: rgba(255, 255, 255, 0.05);
+      padding: 20px;
+      margin-bottom: 20px;
+      border-radius: 10px;
+    }
+
+    .project img {
+      width: 100%;
+      border-radius: 10px;
+      margin-bottom: 15px;
+    }
+
+    .project h3 {
+      color: var(--primary);
+      font-size: 1.5rem;
+    }
+
+    .project p {
+      margin: 10px 0;
+    }
+
+    .project a {
+      color: var(--primary);
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .skills-list {
+      list-style: none;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 15px;
+      margin-top: 20px;
+    }
+
+    .skills-list li {
+      background: rgba(255, 255, 255, 0.05);
+      padding: 10px 15px;
+      border-radius: 8px;
+      font-size: 1rem;
+    }
+
+    .tech-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+      gap: 20px;
+      align-items: center;
+      justify-items: center;
+    }
+
+    .tech-grid img {
+      max-width: 60px;
+      filter: brightness(0) invert(1);
+    }
+
+    .testimonial {
+      background: rgba(255, 255, 255, 0.05);
+      padding: 20px;
+      border-left: 4px solid var(--primary);
+      margin-bottom: 20px;
+      border-radius: 8px;
+    }
+
+    .testimonial p {
+      font-style: italic;
+    }
+
+    .testimonial span {
+      display: block;
+      margin-top: 10px;
+      font-weight: bold;
+      color: var(--primary);
+    }
+
+    @media (min-width: 768px) {
+      .project {
+        flex-direction: row;
+        gap: 20px;
+      }
+
+      .project img {
+        width: 300px;
+      }
+
+      .project .info {
+        flex: 1;
+      }
+    }
+
+    nav ul {
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+nav a {
+  font-weight: 700;
+  font-size: 16px;
+  color: #0f172a;
+  background-color: #00f7c3;
+  padding: 10px 18px;
+  border-radius: 30px;
+  text-decoration: none;
+  box-shadow: 0 4px 10px rgba(0, 247, 195, 0.6);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+nav a:hover,
+nav a[aria-current="page"] {
+  background-color: #008a73;
+  color: #f0f0f0;
+  box-shadow: 0 0 15px #00f7c3;
+}
+
+/* Responsive para header */
+@media (max-width: 720px) {
+  header h1 {
+    font-size: 2rem;
+  }
+  
+  header p {
+    font-size: 1rem;
+  }
+  
+  #digital-clock {
+    font-size: 1.2rem;
+  }
+  
+  nav ul {
+    gap: 15px;
+  }
+
+  nav a {
+    font-size: 14px;
+    padding: 8px 14px;
+  }
+}
+
+       #clock {
+            font-size: 1.5rem;
             color: #00ffcc; /* Color cibernético */
-            margin-top: 0.5em; /* Espaciado superior */
-            position: absolute; /* Posición absoluta dentro del header */
-            right: 20px; /* Espaciado a la derecha */
-            top: 20px; /* Espaciado superior */
+            text-shadow: 0 0 8px rgba(0, 255, 204, 0.7), 0 0 16px rgba(0, 255, 204, 0.5);
+            margin: 0.5em 0;
         }
-    
-        header nav {
-            margin-top: 1em; /* Espaciado superior para el menú de navegación */
-        }
-    
-        header nav ul {
-            list-style: none; /* Sin viñetas en la lista */
-            display: flex; /* Flexbox para disposición horizontal */
-            justify-content: center; /* Alineación centrada */
-            gap: 25px; /* Espaciado entre elementos */
-            padding: 0; /* Sin padding */
-        }
-    
-        header nav a {
-            color: white; /* Color de texto blanco */
-            text-decoration: none; /* Sin subrayado */
-            padding: 10px 20px; /* Espaciado interno */
-            border-radius: 5px; /* Bordes redondeados */
-            transition: background 0.3s, transform 0.2s; /* Transiciones suaves */
-            position: relative; /* Para efecto de subrayado */
-        }
-    
-        header nav a:hover {
-            background: rgba(255, 255, 255, 0.2); /* Fondo semitransparente al pasar el ratón */
-            transform: scale(1.05); /* Efecto de aumento */
-        }
-    
-        /* Subrayado animado */
-        header nav a:after {
-            content: ''; /* Elemento vacío para el subrayado */
-            display: block; /* Mostrar como bloque */
-            height: 2px; /* Altura del subrayado */
-            width: 0; /* Ancho inicial */
-            background: #f39c12; /* Color del subrayado */
-            transition: width 0.3s; /* Transición del ancho */
-        }
-    
-        header nav a:hover:after {
-            width: 100%; /* Ancho completo al pasar el ratón */
-        }
-    
-        .portfolio {
-            text-align: center; /* Alineación centrada */
-            padding: 3em 1em; /* Espaciado interno */
-            background: #1e1e1e; /* Fondo blanco */
-            border-radius: 10px; /* Bordes redondeados */
-            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1); /* Sombra sutil */
-            margin: 3em auto; /* Márgenes automáticos para centrar */
-            max-width: 1200px; /* Ancho máximo */
-        }
-    
-        .portfolio h2 {
-            font-size: 2.8em; /* Tamaño grande para el título */
-            margin-bottom: 0.5em; /* Espaciado inferior */
-            color: #00ffcc; /* Color azul */
-            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3); /* Sombra de texto */
-        }
-    
-        .portfolio p {
-            font-size: 1.3em; /* Tamaño de fuente para el párrafo */
-            margin-bottom: 2em; /* Espaciado inferior */
-            max-width: 700px; /* Ancho máximo del párrafo */
-            margin: 0 auto; /* Centrado */
-            color: #f4f4f4;
-        }
-    
-        .projects {
-            display: flex; /* Flexbox para disposición */
-            justify-content: space-between; /* Espaciado uniforme */
-            gap: 2em; /* Espaciado entre elementos */
-            flex-wrap: wrap; /* Permitir el salto de línea */
-            margin-top: 1.5em; /* Espaciado superior */
-        }
-    
-        .project {
-            background: 0 4px 10px rgba(0, 0, 0, 0.2); /* Fondo blanco */
-            color: #333; /* Color de texto oscuro */
-            padding: 2em; /* Espaciado interno */
-            border-radius: 8px; /* Bordes redondeados */
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); /* Sombra sutil */
-            width: 30%; /* Ancho de los proyectos */
-            transition: transform 0.3s, box-shadow 0.3s; /* Transiciones suaves */
-            text-align: center; /* Alineación centrada */
-            position: relative; /* Posición relativa */
-            overflow: hidden; /* Ocultar desbordes */
-            border: 1px solid #ddd; /* Borde sutil */
-            cursor: pointer; /* Cambiar cursor al pasar el ratón */
-        }
-    
-        .project:hover {
-            transform: translateY(-5px); /* Efecto de elevación al pasar el ratón */
-            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2); /* Sombra más intensa */
-            background: linear-gradient(45deg, #80ffdb, #1e1e1e); /* Fondo degradado al pasar el ratón */
-            color: #fff; /* Color de texto blanco al pasar el ratón */
-        }
-    
-        .project h3 {
-            font-size: 1.7em; /* Tamaño de fuente para el título del proyecto */
-            margin-bottom: 0.5em; /* Espaciado inferior */
-            color: #80ffdb;
-        }
-    
-        .project p {
-            font-size: 1.1em; /* Tamaño de fuente para la descripción */
-            line-height: 1.6; /* Espaciado de línea mejorado */
-            color: #f4f4f4;
-        }
-    
-        .project a {
-            display: inline-block; /* Disposición en línea */
-            margin-top: 1em; /* Espaciado superior */
-            padding: 0.7em 1.5em; /* Espaciado interno */
-            background: #3498db; /* Fondo azul */
-            color: white; /* Color de texto blanco */
-            text-decoration: none; /* Sin subrayado */
-            border-radius: 5px; /* Bordes redondeados */
-            transition: background 0.3s, transform 0.2s; /* Transiciones suaves */
-        }
-    
-        .project a:hover {
-            background: #2980b9; /* Fondo más oscuro al pasar el ratón */
-            transform: scale(1.05); /* Efecto de aumento */
-        }
-    
-        /* Estilos para el modal */
-        .modal {
-            display: none; /* Oculto por defecto */
-            position: fixed; /* Posicionamiento fijo */
-            z-index: 1; /* Asegura que esté en la parte superior */
-            left: 0; /* Alineación a la izquierda */
-            top: 0; /* Alineación a la parte superior */
-            width: 100%; /* Ancho completo */
-            height: 100%; /* Alto completo */
-            overflow: auto; /* Permitir desplazamiento */
-            background-color: rgba(0, 0, 0, 0.5); /* Fondo oscuro semitransparente */
-        }
-    
-        .modal-content {
-            background-color: #fefefe; /* Fondo blanco */
-            margin: 10% auto; /* Margen centrado */
-            padding: 20px; /* Espaciado interno */
-            border: 1px solid #888; /* Borde sutil */
-            width: 80%; /* Ancho del modal */
-            max-width: 600px; /* Ancho máximo */
-            border-radius: 8px; /* Bordes redondeados */
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Sombra del modal */
-        }
-    
-        .close {
-            color: #aaa; /* Color del botón de cerrar */
-            float: right; /* Alineación a la derecha */
-            font-size: 28px; /* Tamaño de fuente */
-            font-weight: bold; /* Negrita */
-        }
-    
-        .close:hover,
-        .close:focus {
-            color: black; /* Color al pasar el ratón */
-            text-decoration: none; /* Sin subrayado */
-            cursor: pointer; /* Cambiar cursor */
-        }
-    
-        /* Media Query para dispositivos más pequeños */
-        @media (max-width: 768px) {
-            .project {
-                width: 45%; /* Ancho ajustado para pantallas más pequeñas */
-            }
-        }
-    
-        @media (max-width: 480px) {
-            .project {
-                width: 90%; /* Ancho ajustado para pantallas móviles */
-            }
-    
-            header h1 {
-                font-size: 2em; /* Tamaño de fuente menor para el encabezado */
-            }
-    
-            .portfolio h2 {
-                font-size: 2em; /* Tamaño de fuente menor para el título de la sección */
-            }
-    
-            .portfolio p {
-                font-size: 1.1em; /* Tamaño de fuente menor para el párrafo */
-            }
-        }
- 
-    </style>    
-    
+  </style>
 </head>
 <body>
 
-<header>
-    <h1>Portafolio</h1>
-    <div id="digital-clock"></div>
-    <nav>
-        <ul>
-           <li><a href="index.html">Inicio</a></li>
-            <li><a href="about.html">Sobre Mí</a></li>
-            <li><a href="services.html">Servicios</a></li>
-            <li><a href="portfolio.html">Portafolio</a></li>
-            <li><a href="reservar.html">Contacto</a></li>
-            <li><a href="pago.html">Pagos Seguros</a></li>
-        </ul>
+  <header>
+    <h1>Portafolio Profesional</h1>
+    <p>Desarrollador e Ingeniero Freelance</p>
+    <div id="clock"></div>
+       <nav aria-label="Menú principal">
+      <ul>
+        <li><a href="index.html" aria-current="page">Inicio</a></li>
+        <li><a href="about.html">sobre Alberto</a></li>
+        <li><a href="portfolio.html">Portafolio</a></li>
+        <li><a href="pago.html">Pagos Seguros</a></li>
+      </ul>
     </nav>
-</header>
+  </header>
 
-<section class="portfolio">
-    <h2>Mis Proyectos</h2>
-    <p>Aquí algunos de los proyectos en los que he trabajado, cada uno reflejando mi compromiso con la calidad y la innovación.</p>
+  <!-- Portafolio de proyectos -->
+  <section class="projects">
+    <div class="container">
+      <h2>Proyectos Destacados</h2>
 
-    <div class="projects">
-        <!-- Proyectos con descripción ampliada -->
-        <div class="project">
-            <h3>App de Gestión de Tareas 📋</h3>
-            <p>Organización eficiente y productividad aumentada. Lenguajes: HTML, CSS, JavaScript.</p>
-            <a href="javascript:void(0)" onclick="openModal('App de Gestión de Tareas 📋', 'Aplicación de organización de tareas diarias.')">Ver Proyecto</a>
+      <div class="project">
+        <img src="img/proyecto1.jpg" alt="Proyecto 1">
+        <div class="info">
+          <h3>Panel de Gestión de Pagos</h3>
+          <p>Desarrollé un sistema completo con Node.js, Stripe y MongoDB para automatizar pagos SEPA y visualización en panel.</p>
+          <a href="https://github.com/usuario/proyecto1" target="_blank">Ver en GitHub</a>
         </div>
-        <div class="project">
-            <h3>Plataforma de E-commerce 🛒</h3>
-            <p>Venta en línea con diseño responsivo. Lenguajes: HTML, CSS, JavaScript, PHP.</p>
-            <a href="javascript:void(0)" onclick="openModal('Plataforma de E-commerce 🛒', 'Plataforma para facilitar ventas en línea.')">Ver Proyecto</a>
+      </div>
+
+      <div class="project">
+        <img src="img/proyecto2.jpg" alt="Proyecto 2">
+        <div class="info">
+          <h3>Marketplace con Laravel</h3>
+          <p>Plataforma multivendedor con pasarelas de pago y panel de administración, desarrollada con Laravel y MySQL.</p>
+          <a href="https://github.com/usuario/proyecto2" target="_blank">Ver en GitHub</a>
         </div>
-        <div class="project">
-            <h3>Sistema de Reservas 🍽️</h3>
-            <p>Reservas para restaurantes con recordatorios. Lenguajes: HTML, CSS, JavaScript.</p>
-            <a href="javascript:void(0)" onclick="openModal('Sistema de Reservas 🍽️', 'Sistema avanzado para gestión de reservas en restaurantes.')">Ver Proyecto</a>
+      </div>
+
+      <div class="project">
+        <img src="img/proyecto3.jpg" alt="Proyecto 3">
+        <div class="info">
+          <h3>Red Social con Chat en Tiempo Real</h3>
+          <p>Desarrollé una red social tipo foro con chat en vivo utilizando React, Node.js y Socket.io.</p>
+          <a href="https://github.com/usuario/proyecto3" target="_blank">Ver en GitHub</a>
         </div>
-        <div class="project">
-            <h3>Red Social de Viajes 🌍</h3>
-            <p>Conecta viajeros y comparte experiencias. Lenguajes: HTML, CSS, JS, Node.js.</p>
-            <a href="javascript:void(0)" onclick="openModal('Red Social de Viajes 🌍', 'Una plataforma para conectar viajeros.')">Ver Proyecto</a>
+      </div>
+
+      <div class="project">
+        <img src="img/proyecto4.jpg" alt="Proyecto 4">
+        <div class="info">
+          <h3>Landing Page SEO Optimizada</h3>
+          <p>Página web para negocio local optimizada con datos estructurados, SEO on-page y versión responsive en HTML/CSS puro.</p>
+          <a href="https://github.com/usuario/proyecto4" target="_blank">Ver en GitHub</a>
         </div>
-        <div class="project">
-            <h3>App de Recomendación de Películas 🎬</h3>
-            <p>Recomendaciones de películas personalizadas. Lenguajes: Python, Flask, HTML, CSS.</p>
-            <a href="javascript:void(0)" onclick="openModal('App de Recomendación de Películas 🎬', 'Aplicación para recomendar películas en base
-            a preferencias.')">Ver Proyecto</a>
-        </div>
-        <div class="project">
-            <h3>Simulador de Bolsa 📈</h3>
-            <p>Simulador de inversiones para aprender a operar en bolsa. Lenguajes: Python, Django, SQL.</p>
-            <a href="javascript:void(0)" onclick="openModal('Simulador de Bolsa 📈', 'Simulador para aprender a invertir en la bolsa.')">Ver Proyecto</a>
-        </div>
-        <div class="project">
-    <h3>Dashboard de Administración 💼</h3>
-    <p>Panel administrativo con filtros, gráficos y gestión de usuarios. Lenguajes: React.js, Node.js, MongoDB.</p>
-    <a href="javascript:void(0)" onclick="openModal('Dashboard de Administración 💼', 'Sistema de control interno para empresas.')">Ver Proyecto</a>
-</div>
-<div class="project">
-    <h3>Bot de Trading Automatizado 🤖</h3>
-    <p>Bot que opera criptomonedas con IA. Lenguajes: Python, Pandas, Binance API, Scikit-Learn.</p>
-    <a href="javascript:void(0)" onclick="openModal('Bot de Trading Automatizado 🤖', 'Sistema de inversión automatizada usando IA.')">Ver Proyecto</a>
-</div>
-<div class="project">
-    <h3>Sistema de Facturación Electrónica 🧾</h3>
-    <p>Generación y envío de facturas en PDF, con control de clientes y pagos. Lenguajes: Laravel, MySQL, JavaScript.</p>
-    <a href="javascript:void(0)" onclick="openModal('Sistema de Facturación Electrónica 🧾', 'Solución integral para pequeñas y medianas empresas.')">Ver Proyecto</a>
-</div>
-<div class="project">
-    <h3>Plataforma de Cursos Online 📚</h3>
-    <p>Publicación de cursos, video lecciones, pagos y seguimiento de estudiantes. Lenguajes: React, Node.js, Stripe.</p>
-    <a href="javascript:void(0)" onclick="openModal('Plataforma de Cursos Online 📚', 'Educación en línea con control de avance y pagos integrados.')">Ver Proyecto</a>
-</div>
-<div class="project">
-    <h3>Aplicación de Control de Inventario 📦</h3>
-    <p>Gestión de productos, stock, entradas y salidas. Lenguajes: Vue.js, Laravel, MySQL.</p>
-    <a href="javascript:void(0)" onclick="openModal('Aplicación de Control de Inventario 📦', 'Gestión completa de inventarios para tiendas físicas y online.')">Ver Proyecto</a>
-</div>
-<div class="project">
-    <h3>Portfolio Interactivo Personal 💻</h3>
-    <p>Un sitio moderno para mostrar tu perfil, experiencia y servicios. Lenguajes: HTML, CSS, JavaScript, GSAP.</p>
-    <a href="javascript:void(0)" onclick="openModal('Portfolio Interactivo Personal 💻', 'Demuestra tus habilidades de frontend y animaciones modernas.')">Ver Proyecto</a>
-</div>
-<div class="project">
-    <h3>Sistema de Gestión Clínica 🏥</h3>
-    <p>Agenda médica, historial de pacientes y recordatorios automáticos. Lenguajes: Django, PostgreSQL, Bootstrap.</p>
-    <a href="javascript:void(0)" onclick="openModal('Sistema de Gestión Clínica 🏥', 'Optimiza la administración médica con recordatorios y control de citas.')">Ver Proyecto</a>
-</div>
-<div class="project">
-    <h3>Plataforma de Evaluaciones con IA 🧠</h3>
-    <p>Evaluaciones automáticas con análisis inteligente de respuestas. Lenguajes: Python, FastAPI, OpenAI API, React.</p>
-    <a href="javascript:void(0)" onclick="openModal('Plataforma de Evaluaciones con IA 🧠', 'Generación y corrección de tests educativos de forma automática.')">Ver Proyecto</a>
-</div>
-<div class="project">
-    <h3>💼 ERP Inteligente para PYMEs</h3>
-    <p>Suite de gestión empresarial con automatización de inventarios, ventas y contabilidad. Lenguajes: Django, PostgreSQL, Bootstrap, APIs externas.</p>
-    <a href="javascript:void(0)" onclick="openModal('ERP Inteligente', 'Software empresarial todo-en-uno adaptado a negocios en crecimiento.')">Ver Proyecto</a>
-</div>
-<div class="project">
-    <h3>🤖 Atención al Cliente con IA Multicanal</h3>
-    <p>Asistente virtual que responde en WhatsApp, Web, Telegram y Messenger 24/7. Lenguajes: Node.js, GPT API, Twilio, Webhooks.</p>
-    <a href="javascript:void(0)" onclick="openModal('Atención al Cliente IA', 'Automatización total del servicio al cliente con IA entrenada.')">Ver Proyecto</a>
-</div>
-<div class="project">
-    <h3>🛡️ Plataforma de Ciberseguridad Predictiva</h3>
-    <p>Detección de amenazas en tiempo real con IA y respuesta automática ante incidentes. Lenguajes: Python, ELK Stack, Snort, Bash Scripts.</p>
-    <a href="javascript:void(0)" onclick="openModal('Ciberseguridad Predictiva', 'Protección proactiva con sistemas de alerta y acción automática.')">Ver Proyecto</a>
-</div>
+      </div>
+
     </div>
-</section>
+  </section>
 
-<!-- Modal para mostrar más información -->
-<div id="myModal" class="modal">
-    <div class="modal-content">
-        <span class="close" onclick="closeModal()">&times;</span>
-        <h2 id="modal-title"></h2>
-        <p id="modal-description"></p>
+  <!-- Tecnologías -->
+  <section class="skills">
+    <div class="container">
+      <h2>Tecnologías</h2>
+      <ul class="skills-list">
+        <li>HTML5 / CSS3 / JavaScript</li>
+        <li>Node.js / Express</li>
+        <li>MongoDB / MySQL</li>
+        <li>React.js / Vue.js</li>
+        <li>Stripe / PayPal / MercadoPago</li>
+        <li>Git / GitHub</li>
+        <li>PHP / Laravel</li>
+        <li>Next.js / Tailwind CSS</li>
+        <li>SEO Técnico y Local</li>
+        <li>Socket.io / WebSockets</li>
+        <li>REST APIs / JWT / OAuth2</li>
+        <li>Docker / NGINX</li>
+        <li>Lenguaje de programación basado en C++.</li>
+        <li>Lenguaje de programación basado en C.</li>
+        <li>Lenguaje de programacion MySQL</li>
+        <li>Python + Django / Flask / FastAPI</li>
+        <li>C# + .NET Core</li>
+        <li>Java + Spring Boot</li>
+        <li>GraphQL</li>
+      </ul>
     </div>
-</div>
+  </section>
 
-<script>
-    // Reloj digital
-    function startClock() {
-        const clock = document.getElementById('digital-clock');
-        setInterval(() => {
-            const now = new Date();
-            clock.textContent = now.toLocaleTimeString();
-        }, 1000);
+  <!-- Servicios -->
+  <section class="services">
+    <div class="container">
+      <h2>Servicios</h2>
+      <ul class="skills-list">
+        <li>Desarrollo de plataformas personalizadas</li>
+        <li>Integración de pagos en línea</li>
+        <li>Automatización de procesos empresariales</li>
+        <li>Optimización SEO para negocios locales</li>
+        <li>Creación de paneles de administración</li>
+        <li>Migración y mejora de sitios existentes</li>
+        <li>Creacion de Algoritmos y Bot en MQL4/MQL5</li>
+        <li>Creacion de software y Sistemas</li>
+        <li>Creacion de base de datos</li>
+        <li>Creacion de servidores y conexiones</li>
+        <li> Y mucho mas</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Testimonios -->
+  <section class="testimonials">
+    <div class="container">
+      <h2>Testimonios</h2>
+
+      <div class="testimonial">
+        <p>"Gracias a su trabajo, ahora gestionamos nuestros cobros de forma automática. Profesional, rápido y resolutivo."</p>
+        <span>- Carlos López, CEO en Fintecha</span>
+      </div>
+
+      <div class="testimonial">
+        <p>"El sistema de marketplace superó nuestras expectativas. Todo bien documentado y entregado a tiempo."</p>
+        <span>- Marta Rivas, Fundadora de TiendaMix</span>
+      </div>
+
+      <div class="testimonial">
+        <p>"Contratamos su servicio para una landing SEO y en menos de 2 semanas empezamos a recibir visitas orgánicas."</p>
+        <span>- Jorge Fernández, Autónomo</span>
+      </div>
+
+    </div>
+  </section>
+
+   <script>
+    // Reloj
+    function updateClock() {
+      const now = new Date();
+      const hours = String(now.getHours()).padStart(2, '0');
+      const minutes = String(now.getMinutes()).padStart(2, '0');
+      const seconds = String(now.getSeconds()).padStart(2, '0');
+      document.getElementById('clock').textContent = `${hours}:${minutes}:${seconds}`;
+    }
+    setInterval(updateClock, 1000);
+    updateClock();
+
+    // Modal
+    const modal = document.getElementById("myModal");
+    const btn = document.getElementById("openModal");
+    const span = document.getElementsByClassName("close")[0];
+
+    btn.onclick = function() {
+      modal.style.display = "block";
     }
 
-    // Funciones para abrir y cerrar el modal
-    function openModal(title, description) {
-        document.getElementById('modal-title').innerText = title;
-        document.getElementById('modal-description').innerText = description;
-        document.getElementById('myModal').style.display = "block";
+    span.onclick = function() {
+      modal.style.display = "none";
     }
 
-    function closeModal() {
-        document.getElementById('myModal').style.display = "none";
-    }
-
-    // Iniciar el reloj digital
-    startClock();
-
-    // Cerrar el modal al hacer clic fuera de él
     window.onclick = function(event) {
-        const modal = document.getElementById('myModal');
-        if (event.target === modal) {
-            closeModal();
-        }
+      if (event.target == modal) {
+        modal.style.display = "none";
+      }
     }
-</script>
-
+  </script>
+  
 </body>
-</html> 
+</html>

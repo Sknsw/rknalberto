@@ -1,202 +1,310 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
+/* Reset y body */
 body {
-    font-family: 'Courier New', Courier, monospace;
-    color: #f0f0f0;
-    background: #1e1e1e;
-    line-height: 1.6;
+  margin: 0;
+  font-family: 'Rubik', sans-serif;
+  background: linear-gradient(to right, #141e30, #243b55);
+  color: #f0f0f0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  padding-top: 60px;
+  line-height: 1.5;
 }
 
+/* Header */
+/* Header */
+/* Header renovado y más impactante */
 header {
-    background: linear-gradient(135deg, #007acc, #1e1e1e);
-    color: #fff;
-    text-align: center;
-    padding: 60px 20px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
-    position: relative;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: linear-gradient(135deg, #00f7c3, #008a73);
+  padding: 20px 40px;
+  z-index: 100;
+  box-shadow: 0 8px 20px rgba(0, 247, 195, 0.7);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  font-weight: 700;
+  color: #0f172a;
+  border-bottom-left-radius: 25px;
+  border-bottom-right-radius: 25px;
+  animation: fadeIn 1s ease forwards;
+  
+  /* Para la transición de ocultar */
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  will-change: transform, opacity;
+}
+
+header.hidden {
+  transform: translateY(-120%);
+  opacity: 0;
+  pointer-events: none;
 }
 
 header h1 {
-    font-size: 2.5rem;
-    font-weight: 700;
-    margin-bottom: 15px;
-    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
+  font-size: 2.8rem;
+  margin: 0 0 5px 0;
+  text-shadow: 1px 1px 5px rgba(0, 255, 170, 0.6);
 }
 
 header p {
-    font-size: 1.3rem;
-    font-style: italic;
-    margin-bottom: 20px;
-}
-
-header nav ul {
-    list-style: none;
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    flex-wrap: wrap;
-}
-
-header nav ul li a {
-    color: #fff;
-    text-decoration: none;
-    padding: 10px 15px;
-    border-radius: 6px;
-    font-weight: 500;
-    transition: background 0.3s, border 0.3s;
-}
-
-header nav ul li a:hover {
-    background: rgba(255, 255, 255, 0.1);
-    border: 1px solid #fff;
+  font-size: 1.2rem;
+  font-weight: 500;
+  margin: 0 0 12px 0;
+  color: #0f172add;
 }
 
 #digital-clock {
-    font-size: 1.1rem;
-    color: #00ffcc;
-    text-shadow: 0 0 6px rgba(0, 255, 204, 0.6);
-    margin-top: 15px;
+  font-weight: 900;
+  font-size: 1.5rem;
+  margin-bottom: 12px;
+  color: #0f172a;
+  text-shadow: 0 0 8px #00f7c3aa;
 }
 
-section {
-    background: #252526;
-    margin: 40px auto;
-    padding: 40px 20px;
-    max-width: 1000px;
-    border-radius: 10px;
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.35);
-    transition: transform 0.3s;
-    position: relative;
+nav ul {
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 0;
+  margin: 0;
+  list-style: none;
 }
 
-section:hover {
-    transform: translateY(-4px);
+nav a {
+  font-weight: 700;
+  font-size: 16px;
+  color: #0f172a;
+  background-color: #00f7c3;
+  padding: 10px 18px;
+  border-radius: 30px;
+  text-decoration: none;
+  box-shadow: 0 4px 10px rgba(0, 247, 195, 0.6);
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-.intro,
-.highlight,
-.about,
-.service-item {
-    position: relative;
-    border-radius: 10px;
-    background: #2d2d2d;
-    color: #f0f0f0;
-    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
-    padding: 25px;
-    margin-bottom: 20px;
-    animation: fadeIn 0.8s ease;
-    z-index: 1;
+nav a:hover,
+nav a[aria-current="page"] {
+  background-color: #008a73;
+  color: #f0f0f0;
+  box-shadow: 0 0 15px #00f7c3;
 }
 
-.intro {
-    text-align: center;
-    background: linear-gradient(135deg, #005f5f, #007acc);
-    color: white;
-}
-
-.highlight:hover,
-.service-item:hover {
-    background: #007acc;
-    color: #fff;
-    transform: translateY(-5px);
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.4);
-}
-
-.service-item {
-    width: calc(50% - 20px);
-    text-align: center;
-    transition: transform 0.3s ease, background 0.3s ease;
-}
-
-.service-item h3 {
-    font-size: 1.3rem;
-    color: #00ffcc;
-    margin-bottom: 10px;
-}
-
-.service-item p {
+/* Responsive para header */
+@media (max-width: 720px) {
+  header h1 {
+    font-size: 2rem;
+  }
+  
+  header p {
     font-size: 1rem;
-    color: #e0e0e0;
+  }
+  
+  #digital-clock {
+    font-size: 1.2rem;
+  }
+  
+  nav ul {
+    gap: 15px;
+  }
+
+  nav a {
+    font-size: 14px;
+    padding: 8px 14px;
+  }
+}
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: linear-gradient(135deg, #00f7c3, #008a73);
+  padding: 20px 40px;
+  z-index: 100;
+  box-shadow: 0 8px 20px rgba(0, 247, 195, 0.7);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  font-weight: 700;
+  color: #0f172a;
+  border-bottom-left-radius: 25px;
+  border-bottom-right-radius: 25px;
+  animation: fadeIn 1s ease forwards;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  will-change: transform, opacity;
+}
+
+header.hidden {
+  transform: translateY(-120%);
+  opacity: 0;
+  pointer-events: none;
+}
+
+header h1 {
+  font-size: 2.8rem;
+  margin: 0 0 5px 0;
+  text-shadow: 1px 1px 5px rgba(0, 255, 170, 0.6);
+}
+
+/* ... resto del CSS igual ... */
+
+/* Secciones generales */
+section {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 30px 25px;
+  background: rgba(30, 41, 59, 0.85);
+  border-radius: 15px;
+  box-shadow: 0 6px 20px rgba(0, 255, 170, 0.15);
+  animation: fadeIn 0.8s ease forwards;
+}
+
+h1, h2, h3 {
+  color: #00f7c3;
+  margin-bottom: 15px;
+  font-weight: 700;
+}
+
+p {
+  color: #cbd5e1;
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+/* Listados destacados con flexbox */
+.highlight {
+  margin-bottom: 20px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #00f7c3aa;
+}
+
+.highlight:last-child {
+  border-bottom: none;
 }
 
 /* Botones */
 .booking-button,
-.call-button {
-    display: inline-block;
-    margin-top: 20px;
-    padding: 12px 20px;
-    background-color: #80ffdb;
-    color: #1e1e1e;
-    text-decoration: none;
-    font-size: 1rem;
-    font-weight: bold;
-    border-radius: 5px;
-    transition: background-color 0.3s ease, box-shadow 0.3s ease;
-    animation: zoomIn 0.6s ease-out;
+.cta-button {
+  background-color: #00f7c3;
+  color: #0f172a;
+  font-weight: 700;
+  padding: 14px 32px;
+  border-radius: 30px;
+  text-decoration: none;
+  display: inline-block;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .booking-button:hover,
-.call-button:hover {
-    background-color: #66ccb5;
-    box-shadow: 0 0 12px rgba(128, 255, 219, 0.6);
+.cta-button:hover {
+  background-color: #00cba2;
+  box-shadow: 0 0 15px rgba(0, 247, 195, 0.6);
 }
 
-/* Efecto ::before más suave */
-.intro::before,
-.highlight::before,
-.about::before,
-.service-item::before {
-    content: "";
-    position: absolute;
-    top: -8%;
-    left: -8%;
-    width: 116%;
-    height: 116%;
-    background: linear-gradient(45deg, #80ffdb, #1e1e1e);
-    filter: blur(18px);
-    z-index: -1;
-    border-radius: 20px;
-    opacity: 0.5;
+/* Servicios flex grid */
+.service-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 24px;
 }
 
-/* Footer */
-footer {
-    text-align: center;
-    padding: 1em 0;
-    background: rgba(0, 0, 0, 0.6);
-    margin-top: 3em;
-    font-size: 0.9rem;
+.service-item {
+  background: #1e293bcc;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 255, 170, 0.15);
+  transition: transform 0.25s ease;
 }
 
-/* Animaciones */
+.service-item:hover {
+  transform: translateY(-6px);
+}
+
+/* Botón WhatsApp flotante */
+.whatsapp-float {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  width: 56px;
+  height: 56px;
+  background-color: #25d366;
+  border-radius: 50%;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+  z-index: 1000;
+}
+
+.whatsapp-float:hover {
+  background-color: #20ba57;
+  transform: scale(1.1);
+}
+
+.whatsapp-float img {
+  width: 28px;
+  height: 28px;
+}
+
+/* Animación fadeIn */
 @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(10px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-@keyframes zoomIn {
-    from { transform: scale(0.95); opacity: 0; }
-    to { transform: scale(1); opacity: 1; }
-}
-
-/* Responsivo */
-@media (max-width: 800px) {
-    header h1 { font-size: 2rem; }
-    header p { font-size: 1.1rem; }
-    .service-item { width: 100%; margin: 10px 0; }
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
-@media (max-width: 600px) {
-    header h1 { font-size: 1.7rem; }
-    header p { font-size: 1rem; }
-    .intro, .highlight, .about, .service-item {
-        padding: 20px;
-    }
-    .booking-button, .call-button {
-        font-size: 0.9rem;
-        padding: 10px 15px;
-    }
+/* Responsive */
+@media (max-width: 720px) {
+  nav ul {
+    gap: 14px;
+  }
+
+  nav a {
+    font-size: 14px;
+  }
+
+  section {
+    margin: 25px 15px;
+    padding: 20px 15px;
+  }
+
+  .service-list {
+    grid-template-columns: 1fr;
+  }
+}
+
+.intro {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 30px 25px;
+  background: rgba(30, 41, 59, 0.85); /* mismo fondo translúcido que las secciones */
+  border-radius: 15px;
+  box-shadow: 0 6px 20px rgba(0, 255, 170, 0.15);
+  animation: fadeIn 0.8s ease forwards;
+  color: #cbd5e1; /* mismo color de párrafos */
+  text-align: center;
+}
+
+.intro h2 {
+  color: #00f7c3; /* mismo color que títulos */
+  font-weight: 700;
+  margin-bottom: 15px;
+  font-size: 2rem;
+}
+
+.intro p {
+  font-size: 16px;
+  line-height: 1.5;
+  margin-bottom: 20px;
+  color: #cbd5e1;
 }

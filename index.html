@@ -1,257 +1,312 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ingeniero y Desarrollador de Software - Programador Freelance</title>
-      <!-- Meta Tags SEO -->
-      <meta name="description" content="programador freelance y ingeniero de software.">
-      <meta name="keywords" content="programador, ingeniero de software, desarrollo web, programación, aplicaciones a medida, soluciones tecnológicas, consultoría tecnológica">
-      <meta name="author" content="Alberto">
-       <!-- Título y Descripción para SEO -->
-    <meta name="description" content="programador freelance en valencia, andalucia, extremadura, galicia, barcelona, madrid, granada, cordoba.">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ingeniero y Desarrollador de Software - Programador Freelance</title>
 
-    <!-- Keywords relevantes para posicionamiento -->
-    <meta name="keywords" content="programador freelance, ingeniero de software, desarrollo de software a medida, aplicaciones web, consultoría tecnológica, optimización de procesos, mantenimiento web, tecnología empresarial">
+  <!-- Meta Tags SEO -->
+  <meta name="description" content="Programador freelance e ingeniero de software con experiencia en desarrollo web, aplicaciones a medida, consultoría tecnológica y soluciones innovadoras." />
+  <meta name="keywords" content="programador freelance, ingeniero de software, desarrollo web, aplicaciones a medida, consultoría tecnológica, inteligencia artificial, bots, optimización SEO" />
+  <meta name="author" content="Alberto Rodríguez" />
+  <meta name="robots" content="index, follow" />
 
-    <!-- Metaetiqueta para robots de motores de búsqueda -->
-    <meta name="robots" content="programador, freelance programación, programador ">
-    
-      <!-- Etiquetas Open Graph para redes sociales -->
-  <meta property="og:title" content="RKNG Ingeniería | Programador Freelance">
-  <meta property="og:description" content="Soluciones futurista eficientes para hogares y empresas.">
-  <meta property="og:image" content="https://rkningenery.com/assets/imagen-portada.jpg">
-  <meta property="og:url" content="https://rkningenery.com/">
-  <meta property="og:type" content="website">
+  <!-- Open Graph para redes sociales -->
+  <meta property="og:title" content="RKNG Ingeniería | Programador Freelance" />
+  <meta property="og:description" content="Soluciones futuristas y eficientes para hogares y empresas." />
+  <meta property="og:image" content="https://rkningenery.com/assets/imagen-portada.jpg" />
+  <meta property="og:url" content="https://rkningenery.com/" />
+  <meta property="og:type" content="website" />
 
- <link rel="stylesheet" href="style2.css" />
- <style>
+  <!-- Favicon -->
+  <link rel="icon" href="/favicon.ico" />
+
+  <!-- CSS externo -->
+  <link rel="stylesheet" href="style2.css" />
+
+  <!-- CSS interno para WhatsApp y CTA -->
+  <style>
     /* BOTÓN WHATSAPP */
     .whatsapp-float {
-        position: fixed;
-        bottom: 20px;
-        right: 20px;
-        z-index: 999;
-        width: 60px;
-        height: 60px;
-        background-color: #25D366;
-        border-radius: 50%;
-        box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-        display: flex;
-        justify-content: center;
-        align-items: center;
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      z-index: 9999;
+      width: 60px;
+      height: 60px;
+      background-color: #25D366;
+      border-radius: 50%;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transition: background-color 0.3s ease;
+    }
+    .whatsapp-float:hover {
+      background-color: #1ebe57;
     }
     .whatsapp-float img {
-        width: 35px;
-        height: 35px;
+      width: 35px;
+      height: 35px;
+      pointer-events: none;
     }
 
-    /* NUEVA SECCIÓN DESTACADA */
+    /* SECCIÓN LLAMADA A LA ACCIÓN */
     .call-to-action {
-        background: linear-gradient(to right, #1a1a1a, #333);
-        color: white;
-        padding: 50px 20px;
-        text-align: center;
-        border-radius: 20px;
-        margin: 40px auto;
-        max-width: 900px;
-        box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+      background: linear-gradient(to right, #1a1a1a, #333);
+      color: white;
+      padding: 50px 20px;
+      text-align: center;
+      border-radius: 20px;
+      margin: 40px auto;
+      max-width: 900px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
     }
     .call-to-action h2 {
-        font-size: 2.5em;
-        margin-bottom: 20px;
+      font-size: 2.5em;
+      margin-bottom: 20px;
     }
     .call-to-action p {
-        font-size: 1.2em;
-        margin-bottom: 30px;
+      font-size: 1.2em;
+      margin-bottom: 30px;
+      line-height: 1.5;
     }
     .cta-button {
-        background-color: #f39c12;
-        color: white;
-        padding: 15px 30px;
-        font-size: 1em;
-        text-decoration: none;
-        border-radius: 30px;
-        transition: background 0.3s ease;
+      background-color: #f39c12;
+      color: white;
+      padding: 15px 30px;
+      font-size: 1.1em;
+      text-decoration: none;
+      border-radius: 30px;
+      box-shadow: 0 4px 8px rgba(243, 156, 18, 0.5);
+      transition: background-color 0.3s ease, box-shadow 0.3s ease;
+      display: inline-block;
     }
-    .cta-button:hover {
-        background-color: #e67e22;
+    .cta-button:hover,
+    .cta-button:focus {
+      background-color: #e67e22;
+      box-shadow: 0 6px 12px rgba(230, 126, 34, 0.7);
+      outline: none;
     }
-</style>
+  </style>
 </head>
-<body>
 
-<header>
+<body>
+  <header>
     <h1>Ingeniero y Desarrollador de Software</h1>
     <p>Innovación, Estrategia y Tecnología en tus manos</p>
-    <div id="digital-clock"></div>
-    <nav>
-        <ul>
-            <li><a href="index.html">Inicio</a></li>
-            <li><a href="about.html">Sobre Mí</a></li>
-            <li><a href="services.html">Servicios</a></li>
-            <li><a href="portfolio.html">Portafolio</a></li>
-            <li><a href="reservar.html">Contacto</a></li>
-            <li><a href="pago.html">Pagos Seguros</a></li>
-        </ul>
+    <div id="digital-clock" aria-live="polite" aria-atomic="true" style="font-weight: bold; font-size: 1.2em;"></div>
+    <nav aria-label="Menú principal">
+      <ul>
+        <li><a href="index.html" aria-current="page">Inicio</a></li>
+        <li><a href="about.html">sobre Alberto</a></li>
+        <li><a href="portfolio.html">Portafolio</a></li>
+        <li><a href="pago.html">Pagos Seguros</a></li>
+      </ul>
     </nav>
-</header>
+  </header>
 
-<section class="intro">
-    <h2>Programador freelance e ingeniero de tecnologias</h2>
-    <p>Con años de experiencia en el desarrollo de software a medida, aplicaciones web y de escritorio, creacion de paginas web, algoritmos, bot automaticos, inteligencia artificial, me especializo en crear soluciones innovadoras que optimizan el rendimiento y potencian el crecimiento.</p>
-</section>
+  <main>
+<div class="intro" aria-label="Introducción">
+  <h2>Programador freelance e ingeniero de tecnologías</h2>
+  <p>
+    Soy Ingeniero en Sistemas y Desarrollador Full Stack con más de 5 años de experiencia. He trabajado con Node.js, React, Laravel, bases de datos SQL/NoSQL y APIs. Me apasiona crear herramientas útiles, intuitivas y seguras.
+    Con años de experiencia en el desarrollo de software a medida, aplicaciones web y de escritorio,
+    creación de páginas web, algoritmos, bots automáticos e inteligencia artificial,
+    me especializo en crear soluciones innovadoras que optimizan el rendimiento y potencian el crecimiento.
+  </p>
+</div>
 
-<section>
-    <div class="highlight">
-        <h3>PAGINAS WEB</h3>
-        <p>Creaciones de páginas web completas y funcional desde cero hasta el despliegue a tu gusto.</p>
-    </div>
-    <div class="highlight">
+
+    <section aria-label="Servicios destacados">
+      <div class="highlight">
+        <h3>PÁGINAS WEB</h3>
+        <p>Creación de páginas web completas y funcionales desde cero hasta el despliegue a tu gusto.</p>
+      </div>
+      <div class="highlight">
         <h3>APLICACIONES WEB Y DE ESCRITORIO</h3>
-        <p>Creaciones de aplicaciones para todo tipo de personas, para todo tipo de proposito, adaptado a sus necesidades.</p>
-    </div>
-    <div class="highlight">
+        <p>Creación de aplicaciones adaptadas a todo tipo de personas y propósitos.</p>
+      </div>
+      <div class="highlight">
         <h3>BASE DE DATOS</h3>
-        <p>Creacion de base de datos y vinculacion de base de datos. Creación desde pequeños base de datos hasta gran base de datos.</p>
-    </div>
-    <div class="highlight">
+        <p>Diseño, creación y vinculación de bases de datos, desde pequeñas hasta grandes estructuras.</p>
+      </div>
+      <div class="highlight">
         <h3>ALGORITMOS CON BOTS</h3>
-        <p>Creación de algoritmos con bots para automatizar e atraer a mas cliente potenciales a su negocio como local o negocio online.</p>
-    </div>
-    <div class="highlight">
+        <p>Automatización y generación de clientes potenciales mediante algoritmos y bots inteligentes.</p>
+      </div>
+      <div class="highlight">
         <h3>SOFTWARE</h3>
-        <p>Creación de software para todo tipo de proposito, empresas y particular. Desde software para ventas, marketing, restauracion, etc.. .</p>
-    </div>
-       <div class="highlight">
+        <p>Desarrollo de software para múltiples propósitos: ventas, marketing, restauración y más.</p>
+      </div>
+      <div class="highlight">
         <h3>¿Qué puedo hacer por ti?</h3>
         <p>
-            ✔️ Desarrollo de Aplicaciones Web & Móviles (React, Next.js, Flutter)<br>
-            ✔️ Portales Inteligentes (Inmobiliarias, eCommerce, Delivery, Redes Sociales)<br>
-            ✔️ Automatización & Bots de Trading con IA y Machine Learning<br>
-            ✔️ Desarrollo Backend con Node.js, Python, Django, FastAPI<br>
-            ✔️ Inteligencia Artificial & Big Data (Chatbots, Análisis Predictivo, NLP)<br>
-            ✔️ Ciberseguridad & Blockchain (Smart Contracts, Web3, Criptomonedas)
+          ✔️ Desarrollo de Aplicaciones Web & Móviles (React, Next.js, Flutter)<br />
+          ✔️ Portales Inteligentes (Inmobiliarias, eCommerce, Delivery, Redes Sociales)<br />
+          ✔️ Automatización & Bots de Trading con IA y Machine Learning<br />
+          ✔️ Desarrollo Backend con Node.js, Python, Django, FastAPI<br />
+          ✔️ Inteligencia Artificial & Big Data (Chatbots, Análisis Predictivo, NLP)<br />
+          ✔️ Ciberseguridad & Blockchain (Smart Contracts, Web3, Criptomonedas)
         </p>
-    </div>
-    <div class="highlight">
+      </div>
+      <div class="highlight">
         <h3>Transformo tus ideas en realidades digitales</h3>
-    <p>
-        Mi misión es ayudarte a crear soluciones tecnológicas impactantes, rentables y seguras. No solo desarrollo software: diseño experiencias digitales que conectan, escalan y generan resultados.<br><br>
-        Trabajo con las tecnologías más avanzadas para que tu proyecto sea competitivo, atractivo y funcional desde el primer clic.<br><br>
-        🚀 ¿Tienes una idea? Yo la convierto en una solución real, estable y lista para crecer contigo.
-    </p>
-    </div>
-</section>
+        <p>
+          Mi misión es ayudarte a crear soluciones tecnológicas impactantes, rentables y seguras.
+          Diseño experiencias digitales que conectan, escalan y generan resultados.<br /><br />
+          Trabajo con tecnologías avanzadas para que tu proyecto sea competitivo, atractivo y funcional desde el primer clic.<br /><br />
+          🚀 ¿Tienes una idea? Yo la convierto en una solución real, estable y lista para crecer contigo.
+        </p>
+      </div>
+    </section>
 
-<section class="about">
-    <h2>Sobre Mí</h2>
-    <p>¡Hola! Soy Alberto Rodriguez programador y un apasionado ingeniero de software con más de tres años de experiencia en el sector tecnológico. Desde pequeño, he tenido una curiosidad insaciable por entender cómo funcionan las cosas, lo que me llevó a explorar el mundo de la programación y la tecnología.</p>
-    <p>Mi enfoque se centra en utilizar la tecnología para resolver problemas complejos y mejorar la eficiencia empresarial. Me especializo en el desarrollo de aplicaciones a medida, inteligencia artificial y gestión de proyectos. Cada nuevo desafío es una oportunidad para aprender y crecer, y disfruto profundamente el proceso de convertir ideas en soluciones prácticas y efectivas.</p>
-    <a href="about.html" class="booking-button" target="_blank">Sobre Mí</a>
-</section>
+    <section class="about" aria-label="Sobre Alberto Rodríguez">
+      <h2>Sobre Mí</h2>
+      <p>
+        ¡Hola! Soy Alberto Rodríguez, programador y apasionado ingeniero de software con más de tres años de experiencia
+        en el sector tecnológico. Desde pequeño, he tenido una curiosidad insaciable por entender cómo funcionan las cosas,
+        lo que me llevó a explorar el mundo de la programación y la tecnología.
+      </p>
+      <p>
+        Mi enfoque se centra en utilizar la tecnología para resolver problemas complejos y mejorar la eficiencia empresarial.
+        Me especializo en el desarrollo de aplicaciones a medida, inteligencia artificial y gestión de proyectos.
+        Cada nuevo desafío es una oportunidad para aprender y crecer, y disfruto profundamente el proceso de convertir ideas en soluciones prácticas y efectivas.
+      </p>
+      <a href="about.html" class="booking-button" target="_blank" rel="noopener noreferrer">Conoce más sobre mí</a>
+    </section>
 
-<section class="services">
-    <h2>Servicios</h2>
-    <div class="service-list">
-        <div class="service-item">
-            <h3>Desarrollo de Software a Medida</h3>
-            <p>Creación de aplicaciones personalizadas que se adaptan a tus necesidades específicas.</p>
-        </div>
-        <div class="service-item">
-            <h3>Optimización SEO</h3>
-            <p>Mejora tu visibilidad en motores de búsqueda con técnicas modernas de posicionamiento web.</p>
-        </div>
-        <div class="service-item">
-            <h3>Consultoría Tecnológica</h3>
-            <p>Asesoramiento en la implementación de tecnologías que impulsen tu negocio.</p>
-        </div>
-        <div class="service-item">
-            <h3>Optimización de Procesos</h3>
-            <p>Análisis y mejora de flujos de trabajo para maximizar la productividad.</p>
-        </div>
-        <div class="service-item">
-            <h3>Desarrollo de Aplicaciones Web</h3>
-            <p>Desarrollo de plataformas web seguras y escalables que mejoran la experiencia del usuario.</p>
-        </div>
-        <div class="service-item">
-            <h3>Desarrollo de Pàgina Web</h3>
-            <p>Desarrollo de página web seguras y escalables que mejoran la experiencia del usuario y con posibilidad de posicionamiento en internet.</p>
-        </div>
-        <div class="service-item">
-            <h3>Mantenimiento Gold</h3>
-            <p>Mantenimiento de calidad con soporte atencion al cliente mejorar la experiencia del Cliente.</p>
-        </div>
-    </div>
-</section>
+    <section class="services" aria-label="Servicios">
+      <h2>Servicios</h2>
+      <div class="service-list">
+        <article class="service-item" tabindex="0">
+          <h3>Desarrollo de Software a Medida</h3>
+          <p>Creación de aplicaciones personalizadas que se adaptan a tus necesidades específicas.</p>
+        </article>
+        <article class="service-item" tabindex="0">
+          <h3>Optimización SEO</h3>
+          <p>Mejora tu visibilidad en motores de búsqueda con técnicas modernas de posicionamiento web.</p>
+        </article>
+        <article class="service-item" tabindex="0">
+          <h3>Consultoría Tecnológica</h3>
+          <p>Asesoramiento en la implementación de tecnologías que impulsen tu negocio.</p>
+        </article>
+        <article class="service-item" tabindex="0">
+          <h3>Optimización de Procesos</h3>
+          <p>Análisis y mejora de flujos de trabajo para maximizar la productividad.</p>
+        </article>
+        <article class="service-item" tabindex="0">
+          <h3>Desarrollo de Aplicaciones Web</h3>
+          <p>Desarrollo de plataformas web seguras y escalables que mejoran la experiencia del usuario.</p>
+        </article>
+        <article class="service-item" tabindex="0">
+          <h3>Desarrollo de Página Web</h3>
+          <p>Desarrollo de páginas web seguras y optimizadas para posicionamiento en internet.</p>
+        </article>
+        <article class="service-item" tabindex="0">
+          <h3>Mantenimiento Gold</h3>
+          <p>Servicio premium de mantenimiento con soporte y atención personalizada para mejorar la experiencia del cliente.</p>
+        </article>
+      </div>
+    </section>
 
-<!-- NUEVA SECCIÓN ALUCINANTE -->
-<section class="call-to-action">
-    <h2>¡Transforma tu futuro digital ahora!</h2>
-    <p>
+    <!-- SECCIÓN LLAMADA A LA ACCIÓN -->
+    <section class="call-to-action" aria-label="Llamada a la acción">
+      <h2>¡Transforma tu futuro digital ahora!</h2>
+      <p>
         🚀 Desde bots inteligentes hasta sistemas de pago automatizados, tu idea puede ser la próxima gran innovación.
         ¿Listo para llevar tu proyecto al siguiente nivel?
-    </p>
-    <a href="reservar.html" class="cta-button">Reserva tu consultoría gratuita</a>
-</section>
+      </p>
+      <a href="reservar.html" class="cta-button" role="button">Reserva tu consultoría gratuita</a>
+    </section>
+  </main>
 
-<!-- BOTÓN FLOTANTE DE WHATSAPP -->
-<a href="https://wa.me/34641438406" class="whatsapp-float" target="_blank" title="Contáctame por WhatsApp">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/WhatsApp_icon.png" alt="WhatsApp" />
-</a>
+  <!-- BOTÓN FLOTANTE DE WHATSAPP -->
+  <a
+    href="https://wa.me/34641438406"
+    class="whatsapp-float"
+    target="_blank"
+    rel="noopener noreferrer"
+    title="Contáctame por WhatsApp"
+    aria-label="Contáctame por WhatsApp"
+  >
+    <img
+      src="https://upload.wikimedia.org/wikipedia/commons/5/5e/WhatsApp_icon.png"
+      alt="Icono de WhatsApp"
+    />
+  </a>
 
-<footer>
+  <footer>
     <p>&copy; 2024 Ingeniero y Desarrollador de Software. Todos los derechos reservados.</p>
-</footer>
+  </footer>
 
-<script>
+  <script>
     // Función para mostrar el reloj digital
     function updateClock() {
-        const now = new Date();
-        const hours = String(now.getHours()).padStart(2, '0');
-        const minutes = String(now.getMinutes()).padStart(2, '0');
-        const seconds = String(now.getSeconds()).padStart(2, '0');
-        document.getElementById('digital-clock').textContent = `${hours}:${minutes}:${seconds}`;
+      const now = new Date();
+      const hours = String(now.getHours()).padStart(2, "0");
+      const minutes = String(now.getMinutes()).padStart(2, "0");
+      const seconds = String(now.getSeconds()).padStart(2, "0");
+      document.getElementById("digital-clock").textContent = `${hours}:${minutes}:${seconds}`;
     }
     setInterval(updateClock, 1000);
-    updateClock(); // Llamar a la función al cargar
-</script>
+    updateClock();
+  </script>
 
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Organization",
-  "name": "RKNG Ingeniería",
-  "url": "https://rkningenery.com",
-  "logo": "https://rkningenery.com/assets/logo.png",
-  "contactPoint": {
-    "@type": "ContactPoint",
-    "telephone": "+34 123 456 789",
-    "contactType": "customer service",
-    "areaServed": "ES",
-    "availableLanguage": ["Spanish"]
-  },
-  "sameAs": [
-    "https://www.facebook.com/rkngingenieria",
-    "https://www.instagram.com/rkngingenieria"
-  ]
-}
-</script>
+  <!-- JSON-LD para SEO -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "RKNG Ingeniería",
+      "url": "https://rkningenery.com",
+      "logo": "https://rkningenery.com/assets/logo.png",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+34 123 456 789",
+        "contactType": "customer service",
+        "areaServed": "ES",
+        "availableLanguage": ["Spanish"]
+      },
+      "sameAs": [
+        "https://www.facebook.com/rkngingenieria",
+        "https://www.instagram.com/rkngingenieria"
+      ]
+    }
+  </script>
 
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "LocalBusiness",
-  "name": "RKNAuto Import",
-  "image": "https://tudominio.com/logo.png",
-  "url": "https://tudominio.com",
-  "address": {
-    "@type": "PostalAddress",
-    "addressLocality": "Madrid",
-    "addressCountry": "ES"
-  },
-  "telephone": "+34 641 43 84 06"
-}
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "RKNAuto Import",
+      "image": "https://tudominio.com/logo.png",
+      "url": "https://tudominio.com",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Madrid",
+        "addressCountry": "ES"
+      },
+      "telephone": "+34 641 43 84 06"
+    }
+  </script>
+  <script>
+  document.addEventListener('DOMContentLoaded', () => {
+    let lastScroll = 0;
+    const header = document.querySelector('header');
+
+    window.addEventListener('scroll', () => {
+      const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+
+      if (currentScroll > lastScroll && currentScroll > 100) {
+        header.classList.add('hidden');
+      } else {
+        header.classList.remove('hidden');
+      }
+
+      lastScroll = currentScroll <= 0 ? 0 : currentScroll;
+    });
+  });
 </script>
 
 </body>
